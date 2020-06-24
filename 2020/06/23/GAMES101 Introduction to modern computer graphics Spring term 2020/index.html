@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hello-world, Welcome">
+    <meta name="keywords" content="GAMES101 Introduction to modern computer graphics Spring term 2020, Welcome">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hello-world | Welcome</title>
+    <title>GAMES101 Introduction to modern computer graphics Spring term 2020 | Welcome</title>
     <link rel="icon" type="image/png" href="/Theo-wu.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/Theo-wu.github.io/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/Theo-wu.github.io/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Theo-wu.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hello-world</h1>
+                    <h1 class="description center-align post-title">GAMES101 Introduction to modern computer graphics Spring term 2020</h1>
                 </div>
             </div>
         </div>
@@ -458,14 +458,228 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><h2 id="It’s-my-first-blog"><a href="#It’s-my-first-blog" class="headerlink" title="It’s my first blog"></a>It’s my first blog</h2><h3 id="I-will-try-some-new-features-in-this-post-so-if-it-becomes-strange-don’t-mind-it"><a href="#I-will-try-some-new-features-in-this-post-so-if-it-becomes-strange-don’t-mind-it" class="headerlink" title="I will try some new features in this post, so if it becomes strange, don’t mind it."></a>I will try some new features in this post, so if it becomes strange, don’t mind it.</h3><script type="math/tex; mode=display">asd</script><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h2 id="GAMES101-Introduction-to-modern-computer-graphics-Spring-term-2020-——by-Lingqi-Yan"><a href="#GAMES101-Introduction-to-modern-computer-graphics-Spring-term-2020-——by-Lingqi-Yan" class="headerlink" title="GAMES101:Introduction to modern computer graphics Spring term 2020 ——by Lingqi Yan"></a>GAMES101:Introduction to modern computer graphics Spring term 2020 ——by Lingqi Yan</h2><h2 id="Lecture-1-Overview-of-CG"><a href="#Lecture-1-Overview-of-CG" class="headerlink" title="Lecture 1 Overview of CG"></a>Lecture 1 Overview of CG</h2><ul>
+<li>When we talk about ‘orientation’, it means unit vector by default.</li>
+<li>Referring to vectors, we use column vectors by default, so we can left multiply the matrix</li>
+</ul>
+<h2 id="Lecture-2-Review-of-Linear-Algebra"><a href="#Lecture-2-Review-of-Linear-Algebra" class="headerlink" title="Lecture 2 Review of Linear Algebra"></a>Lecture 2 Review of Linear Algebra</h2><ul>
+<li>Dot product can tell how similar the directions of the two vectors are</li>
+<li>Cross product does not satisfy the commutative property</li>
+<li>Cross product can be use to estimate the relative position of two vectors and the relative position of  any point to a graph(inside or outside)</li>
+</ul>
+<h2 id="Lecture-3-2D-Transformation"><a href="#Lecture-3-2D-Transformation" class="headerlink" title="Lecture 3 2D Transformation"></a>Lecture 3 2D Transformation</h2><p>As long as you find the relationship between in x and y before and after the change, you find transformation matrix</p>
+<ol>
+<li><p><strong>Rotate</strong> (about the origin (0,0),CCW by default)</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+x' \\ y'\\
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+cos\theta&-sin\theta  \\ sin\theta &cos\theta\\
+\end{matrix}\right)
+·
+\left(\begin{matrix}
+x \\ y\\
+\end{matrix}\right)</script><p>you can derive it from the comparison between the matrix before and after the change</p>
+<p><img src="https://s1.ax1x.com/2020/06/18/NmuEtg.png" alt="NmuEtg.png"><br>and then we got :</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+cos\theta \\ sin\theta
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+a&b \\ c&d
+\end{matrix}\right)
+·
+\left(\begin{matrix}
+1 \\ 0
+\end{matrix}\right)</script><p>and from another point :</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+-sin\theta\\cos\theta
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+cos\theta&b \\ sin\theta&d
+\end{matrix}\right)
+·
+\left(\begin{matrix}
+0 \\ 1
+\end{matrix}\right)</script></li>
+</ol>
+<p>when you rotate in the opposite direction <script type="math/tex">-\theta</script>, the rotation matrix will be the transpose (or inverse) of the original matrix</p>
+<script type="math/tex; mode=display">
+R_{-\theta}=R_\theta^{-1}=
+   \left(\begin{matrix}
+   cos\theta&sin\theta \\ -sin\theta&cos\theta
+   \end{matrix}\right)=
+   R_\theta^T</script><ol>
+<li><p><strong>Shear Matrix</strong> （The x-coordinate is all shifted to the right by ay , so we got x’ = x + ay , while nothing change to y）</p>
+<p><img src="https://s1.ax1x.com/2020/06/18/NmVBKf.png" alt="NmVBKf.png"></p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+x' \\ y'\\
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+1&a  \\ 0 &1
+\end{matrix}\right)
+·
+\left(\begin{matrix}
+x \\ y\\
+\end{matrix}\right)</script></li>
+<li><p><strong>Scale Matrix</strong></p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+   x’ \\ y'
+   \end{matrix}\right)
+   =
+   \left(\begin{matrix}
+   s & 0 \\ 0 & s
+   \end{matrix}\right)
+   ·
+   \left(\begin{matrix}
+   x \\ y
+   \end{matrix}\right)</script></li>
+<li><p><strong>Reflection Matrix</strong> only affect x</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+   x’ \\ y'
+   \end{matrix}\right)
+   =
+   \left(\begin{matrix}
+   -1 & 0 \\ 0 & -1
+   \end{matrix}\right)
+   ·
+   \left(\begin{matrix}
+   x \\ y
+   \end{matrix}\right)</script></li>
+<li><p><strong>Translation</strong></p>
+<p>The four matrices above are all linear transformation, and can be represented by the equation below :</p>
+<script type="math/tex; mode=display">
+x'=ax+by \\
+   y'=cx+dy</script><p>also can be expressed by matrix form :</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+   x’ \\ y'
+      \end{matrix}\right)
+   =
+      \left(\begin{matrix}
+      a & b \\ c & d
+      \end{matrix}\right)
+      ·
+      \left(\begin{matrix}
+      x \\ y
+      \end{matrix}\right)
+      +
+      \left(\begin{matrix}
+      t_x \\ t_y
+      \end{matrix}\right)</script><p>But how can we use multiply of matrix to represent translations?</p>
+<p>  Solution: Homogenous Coordinates. (By the way, the affine matrix equals to linear transform first and then translation)</p>
+<p><strong>2D point = $(x,y,1)^T$ :</strong></p>
+<p>the reason why we attach a ‘1’ in the tail of it’s coordinate is that <strong>we can add a extra offsets on </strong>the original x and y</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+x' \\ y'\\ w'
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+1 & 0 & t_x \\ 0&1&t_y\\ 0&0&1
+\end{matrix}\right)
+·
+\left(\begin{matrix}
+x \\ y\\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+x+t_x \\ y+t_y\\ 1
+\end{matrix}\right)</script></li>
+</ol>
+<p>   <strong>2D vector = $(x,y,0)^T$ :</strong></p>
+<p>   the reason why there is a difference between the expression of point and vector is that we <strong>don’t want a vector’s coordinate to be changed</strong> or <strong>to be added offsets on</strong> when we left-multiply a transformation matrix</p>
+<script type="math/tex; mode=display">
+   \left(\begin{matrix}
+x' \\ y'\\ w'
+   \end{matrix}\right)
+   =
+\left(\begin{matrix}
+   1 & 0 & t_x \\ 0&1&t_y\\ 0&0&1
+\end{matrix}\right)
+   ·
+   \left(\begin{matrix}
+   x \\ y\\ 0
+   \end{matrix}\right)
+   =
+   \left(\begin{matrix}
+   x \\ y\\ 0
+   \end{matrix}\right)</script><p>   So,  there are still the same properties</p>
+<ul>
+<li>vector AB + vector BC = vector AC</li>
+<li>point A - point B = vector AB</li>
+<li>point A + vector AB = point B</li>
+<li>point A + point B = midpoint of A &amp; B</li>
+</ul>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+   x_1 \\ y_1\\ 1
+   \end{matrix}\right)
+   +
+   \left(\begin{matrix}
+   x_2 \\ y_2\\ 1
+   \end{matrix}\right)
+   =
+   \left(\begin{matrix}
+   x_1+x_2 \\ y_1+y_2\\ 2
+   \end{matrix}\right)
+   =
+   \left(\begin{matrix}
+   \frac{(x_1+x_2)}{2} \\ \frac{(y_1+y_2)}{2}\\ 1
+   \end{matrix}\right)</script><p>   Inverse transform : change the image back to its original state. In math, it’s precisely represented by the inverse matrix</p>
+<p>The different sequences applied on the  same object will lead to different results, which reflects in the matrix multiplication(orders also matter).</p>
+<script type="math/tex; mode=display">
+T_{(1,0)}·R_{45}\left(\begin{matrix}
+x \\ y \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+1&0&1\\
+0&1&0\\
+0&0&1\\
+\end{matrix}\right)
+\left(\begin{matrix}
+cos45&-sin45&0\\
+sin45&cos45&0\\
+0&0&1\\
+\end{matrix}\right)
+\left(\begin{matrix}
+x\\
+y\\
+1\\
+\end{matrix}\right)</script><p>On the contrast, we can make much use of the decomposing transforms to, for instance, when we want to <strong>rotate a subject around a given point c</strong></p>
+<p>We can:</p>
+<ol>
+<li><p>Translate the center to origin</p>
+</li>
+<li><p>Rotate</p>
+</li>
+<li><p>Translate the center back to where it was</p>
+<p><img src="https://s1.ax1x.com/2020/06/21/N8lJjx.png" alt="N8lJjx.png"></p>
+<p>represented by matrices:</p>
+<script type="math/tex; mode=display">
+T(c)·R(\alpha)·T(-c)</script></li>
+</ol>
+<h2 id="Lecture4-3D-Transforms"><a href="#Lecture4-3D-Transforms" class="headerlink" title="Lecture4  3D Transforms"></a>Lecture4  3D Transforms</h2><p>They’re almost the extensions of 2D transforms</p>
+<p>3d point = $(\frac{x}{w}, \frac{y}{w}, \frac{z}{w}, 1)^T$ or $(x, y, z, w)^T$</p>
+<p>3d vector = $(x, y, z, 0)^T$</p>
+<h3 id="viewing-transformation"><a href="#viewing-transformation" class="headerlink" title="viewing transformation"></a>viewing transformation</h3><p>view/camera transformation</p>
+<p>projection transformation</p>
+<ul>
+<li><p>orthographic projection</p>
+</li>
+<li><p>perspective projection</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -491,7 +705,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/23/hello-world/">https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/23/hello-world/</a>
+                    <a href="https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/23/GAMES101%20Introduction%20to%20modern%20computer%20graphics%20Spring%20term%202020/">https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/23/GAMES101%20Introduction%20to%20modern%20computer%20graphics%20Spring%20term%202020/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -572,20 +786,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/Theo-wu.github.io/2020/06/23/GAMES101%20Introduction%20to%20modern%20computer%20graphics%20Spring%20term%202020/">
+                <a href="/Theo-wu.github.io/2020/06/23/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/Theo-wu.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="GAMES101 Introduction to modern computer graphics Spring term 2020">
+                        <img src="/Theo-wu.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="图像处理软件">
                         
-                        <span class="card-title">GAMES101 Introduction to modern computer graphics Spring term 2020</span>
+                        <span class="card-title">图像处理软件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            GAMES101:Introduction to modern computer graphics Spring term 2020 ——by Lingqi YanLecture 1 Overview of CG
-When we talk 
+                            
+Matlab实现的简易图像处理软件程序界面如下：
+                               
+一、 打开、显示、保存图片
+ 
+如果选择显示框下方选项，择显示图像位置不同，未选则默认显示在图一
+​    
+也可以通过输入
                         
                     </div>
                     <div class="publish-info">
@@ -607,7 +827,7 @@ When we talk
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/Theo-wu.github.io/2020/06/23/hello-world/">
@@ -637,7 +857,6 @@ When we talk
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
