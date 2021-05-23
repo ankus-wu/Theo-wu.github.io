@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hello-world, Welcome">
+    <meta name="keywords" content="GAMES201, Welcome">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hello-world | Welcome</title>
+    <title>GAMES201 | Welcome</title>
     <link rel="icon" type="image/png" href="/Theo-wu.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/Theo-wu.github.io/libs/awesome/css/all.css">
@@ -288,12 +288,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/Theo-wu.github.io/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/Theo-wu.github.io/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hello-world</h1>
+                    <h1 class="description center-align post-title">GAMES201</h1>
                 </div>
             </div>
         </div>
@@ -421,7 +421,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-23
+                    2020-06-28
                 </div>
                 
 
@@ -442,14 +442,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><h2 id="It’s-my-first-blog"><a href="#It’s-my-first-blog" class="headerlink" title="It’s my first blog"></a>It’s my first blog</h2><h3 id="I-will-try-some-new-features-in-this-post-so-if-it-becomes-strange-don’t-mind-it"><a href="#I-will-try-some-new-features-in-this-post-so-if-it-becomes-strange-don’t-mind-it" class="headerlink" title="I will try some new features in this post, so if it becomes strange, don’t mind it."></a>I will try some new features in this post, so if it becomes strange, don’t mind it.</h3><script type="math/tex; mode=display">asd</script><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h3 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h3><h3 id="Lagrangian-View"><a href="#Lagrangian-View" class="headerlink" title="Lagrangian View"></a>Lagrangian View</h3><p>sensor随着材料一起动，每一个sensor的位置和速度时刻变化</p>
+<p>通常使用粒子的连接，每个粒子携带自己的速度和位置信息</p>
+<h3 id="Eulerian-VIew"><a href="#Eulerian-VIew" class="headerlink" title="Eulerian VIew"></a>Eulerian VIew</h3><p>sensor不移动，每一个sensor检测附近经过的材料的速度</p>
+<p>通常使用网格，网格上的每一个点表示穿过这个点的流体的速度，这个网格的位置是固定的</p>
+<h3 id="Mass-Spring-System-弹簧质点系统"><a href="#Mass-Spring-System-弹簧质点系统" class="headerlink" title="Mass-Spring System(弹簧质点系统)"></a>Mass-Spring System(弹簧质点系统)</h3><p>简单且有用，可以模拟布料和塑料</p>
+<p>Hooke’s law :</p>
+<script type="math/tex; mode=display">
+f_{ij}=-k(||x_i-x_j||_2-l_{ij})\widehat{(x_j-x_i)}</script><p> $l_{ij}$ is the rest length(静息长度) of spring , $i$ and $j$ is two particles of spring . $\widehat{(x_j-x_i)}$ means the direction vector from particle $i$ to particle $j$ </p>
+<p>$k$ is the spring stiffness</p>
+<p>Newton’s second law of motion :</p>
+<script type="math/tex; mode=display">
+\frac{\partial{v_i}}{\partial{t}}
+=
+\frac{1}{m_i}f_{ij}</script><script type="math/tex; mode=display">
+\frac{\partial{x_i}}{\partial{t}}
+=
+v_i</script><p><strong>Forward Euler (explicit) : </strong></p>
+<script type="math/tex; mode=display">
+v_{t+1}=v_t+\Delta{t}\frac{f_t}{m}
+\\x_{t+1}=x_t+\Delta{t}v_t</script><p>the situation of next time step derives from this time step, but it’s not very popular method. People usually adopt the semi-implicit euler.</p>
+<p><strong>Semi-implicit Euler (aka. sympletic Euler, explicit)</strong> usually used</p>
+<script type="math/tex; mode=display">
+v_{t+1}=v_t+\Delta{t}\frac{f_t}{m}
+\\x_{t+1}=x_t+\Delta{t}v_{t+1}</script><p>$\Delta{t}$ is a discrete scalar in computer , the smaller it is the more calculations computer needs to do.</p>
+<p>just three steps:</p>
+<ol>
+<li><p>Compute new velocity using $v_{t+1}=v_t+\Delta t\frac{f_t}{m}$</p>
+</li>
+<li><p>Collision with ground </p>
+</li>
+<li><p>Compute new position using $x_{t+1}=x_t+\Delta tv_{t+1}$</p>
+</li>
+</ol>
+<p>Explicit (forward Euler , symplectic Euler, RK, …):</p>
+<ul>
+<li>Future depends only on the past 当前时刻的所有属性严格(只)依赖于上一时刻</li>
+<li>Easy to implement 容易实现</li>
+<li>Easy to explode 容易发生数值爆炸</li>
+<li></li>
+</ul>
+<p>Implicit (backward Euler, middle-point):</p>
+<ul>
+<li>Future depends on both future and past</li>
+<li>Chicken-egg problem : need to solve a system of (linear) equations</li>
+<li>In general harder to implement </li>
+<li>Each step is more expensive but time steps are larger</li>
+<li>Numerical damping and locking</li>
+</ul>
 
                 
             </div>
@@ -476,7 +516,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/23/hello-world/">https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/23/hello-world/</a>
+                    <a href="https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/28/GAMES201/">https://ankus-wu.github.io/Theo-wu.github.io/Theo-wu.github.io/2020/06/28/GAMES201/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -685,33 +725,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/Theo-wu.github.io/2020/06/23/GAMES101%20Introduction%20to%20modern%20computer%20graphics%20Spring%20term%202020/">
+                <a href="/Theo-wu.github.io/2021/03/25/GAMES202/">
                     <div class="card-image">
                         
                         
-                        <img src="/Theo-wu.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="GAMES101 Introduction to modern computer graphics Spring term 2020">
+                        <img src="/Theo-wu.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="GAMES202">
                         
-                        <span class="card-title">GAMES101 Introduction to modern computer graphics Spring term 2020</span>
+                        <span class="card-title">GAMES202</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            This is a record of learning GAMES101:Introduction to modern computer graphics Spring term 2020 ——by Lingqi Yan
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-25
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/Theo-wu.github.io/categories/Graphics/" class="post-category">
-                                    Graphics
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Chenghao Wu
                             
                         </span>
                     </div>
@@ -723,27 +759,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Theo-wu.github.io/2020/06/23/hello-world/">
+                <a href="/Theo-wu.github.io/2020/06/24/Unity%20little%20games/">
                     <div class="card-image">
                         
                         
-                        <img src="/Theo-wu.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="hello-world">
+                        <img src="/Theo-wu.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="Unity little games">
                         
-                        <span class="card-title">hello-world</span>
+                        <span class="card-title">Unity little games</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            It's my first blog, I will try some new features in this post, so if it becomes strange, don't mind it.
+                            This is a record of programming small games based on unity
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-24
                             </span>
                         <span class="publish-author">
                             
@@ -753,7 +789,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

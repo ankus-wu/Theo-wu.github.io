@@ -32,6 +32,8 @@
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 
+
+
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -111,17 +113,6 @@
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
       <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/Theo-wu.github.io/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
     </a>
     
   </li>
@@ -218,21 +209,10 @@
           
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="/Theo-wu.github.io/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/ankus-wu/Theo-wu.github.io" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -289,7 +269,7 @@
     }
 </style>
 
-<a href="https://github.com/ankus-wu/Theo-wu.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -356,8 +336,7 @@
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -369,7 +348,7 @@
     }
 
     #toc-content {
-        height: calc(100vh - 250px);
+        padding-bottom: 30px;
         overflow: auto;
     }
 
@@ -465,6 +444,11 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="GAMES101-Introduction-to-modern-computer-graphics-Spring-term-2020-——by-Lingqi-Yan"><a href="#GAMES101-Introduction-to-modern-computer-graphics-Spring-term-2020-——by-Lingqi-Yan" class="headerlink" title="GAMES101:Introduction to modern computer graphics Spring term 2020 ——by Lingqi Yan"></a>GAMES101:Introduction to modern computer graphics Spring term 2020 ——by Lingqi Yan</h2><h2 id="Lecture-1-Overview-of-CG"><a href="#Lecture-1-Overview-of-CG" class="headerlink" title="Lecture 1 Overview of CG"></a>Lecture 1 Overview of CG</h2><ul>
@@ -608,7 +592,7 @@ x+t_x \\ y+t_y\\ 1
 <p>   <strong>2D vector = $(x,y,0)^T$ :</strong></p>
 <p>   the reason why there is a difference between the expression of point and vector is that we <strong>don’t want a vector’s coordinate to be changed</strong> or <strong>to be added offsets on</strong> when we left-multiply a transformation matrix</p>
 <script type="math/tex; mode=display">
-   \left(\begin{matrix}
+\left(\begin{matrix}
 x' \\ y'\\ w'
    \end{matrix}\right)
    =
@@ -644,7 +628,10 @@ x' \\ y'\\ w'
    =
    \left(\begin{matrix}
    \frac{(x_1+x_2)}{2} \\ \frac{(y_1+y_2)}{2}\\ 1
-   \end{matrix}\right)</script><p>   Inverse transform : change the image back to its original state. In math, it’s precisely represented by the inverse matrix</p>
+   \end{matrix}\right)</script><p>在欧氏几何空间，同一平面的两条平行线不能相交。然而，在透视空间里面，两条平行线可以相交，例如：火车轨道随着我们的视线越来越窄，最后两条平行线在无穷远处交于一点。笛卡尔坐标能够描述欧氏空间（或者笛卡尔空间）的2D/3D几何，但是这种方法却不适合处理透视空间的问题（实际上，欧氏几何是透视几何的一个子集合），2维笛卡尔坐标可以表示为（x,y）。如果一个点在无穷远处，这个点的坐标将会(∞,∞)，在欧氏空间，这变得没有意义。</p>
+<p>平行线在透视空间的无穷远处交于一点，但是在欧氏空间却不能，齐次坐标能解决这个问题。</p>
+<p>除此之外，齐次坐标还可以表示两个平行向量相交于无穷远的点，可以分别用向量 l = (a, b, c), m = (a, b, d)表示。根据直线交点的计算方法，其交点为 l×m，根据叉乘计算法则，可以得到 l×m = (d - c)( b, -a, 0)，忽略标量(d-c)，我们得到交点为(b, -a, 0)，并且是齐次坐标如果要转化为笛卡尔坐标，那么会得到(b/0, -a/0)，坐标是无穷大，可以认为该点为无穷远。符合平行线相交于无穷远的概念。</p>
+<p>   Inverse transform : change the image back to its original state. In math, it’s precisely represented by the inverse matrix</p>
 <p>The different sequences applied on the  same object will lead to different results, which reflects in the matrix multiplication(orders also matter).</p>
 <script type="math/tex; mode=display">
 T_{(1,0)}·R_{45}\left(\begin{matrix}
@@ -670,7 +657,7 @@ y\\
 <ol>
 <li><p>Translate the center to origin</p>
 </li>
-<li><p>Rotate</p>
+<li><p>Rotate (must apply when at the origin)</p>
 </li>
 <li><p>Translate the center back to where it was</p>
 <p><img src="https://s1.ax1x.com/2020/06/21/N8lJjx.png" alt="N8lJjx.png"></p>
@@ -681,15 +668,1152 @@ T(c)·R(\alpha)·T(-c)</script></li>
 <h2 id="Lecture4-3D-Transforms"><a href="#Lecture4-3D-Transforms" class="headerlink" title="Lecture4  3D Transforms"></a>Lecture4  3D Transforms</h2><p>They’re almost the extensions of 2D transforms</p>
 <p>3d point = $(\frac{x}{w}, \frac{y}{w}, \frac{z}{w}, 1)^T$ or $(x, y, z, w)^T$</p>
 <p>3d vector = $(x, y, z, 0)^T$</p>
-<h3 id="viewing-transformation"><a href="#viewing-transformation" class="headerlink" title="viewing transformation"></a>viewing transformation</h3><p>view/camera transformation</p>
-<p>projection transformation</p>
-<ul>
-<li><p>orthographic projection</p>
+<p>Scale :</p>
+<script type="math/tex; mode=display">
+S(s_x,s_y,s_z)=
+\left(\begin{matrix}
+   s_x & 0 & 0 & 0 \\ 0&s_y&0&0\\ 0&0&s_z&0 \\ 0&0&0&1
+\end{matrix}\right)</script><p>Translation :</p>
+<script type="math/tex; mode=display">
+T(t_x,t_y,t_z)
+   =
+\left(\begin{matrix}
+   1 & 0 & 0 & t_x \\ 0&1&0&t_y\\ 0&0&1&t_z \\ 0&0&0&1
+\end{matrix}\right)</script><p>Rotation : (around x-, y-, or z-axis)</p>
+<script type="math/tex; mode=display">
+R_x(\alpha)=
+\left(\begin{matrix}
+   1 & 0 & 0 & 0 \\ 0&cos\alpha&-sin\alpha&0\\ 0&sin\alpha&cos\alpha&0 \\ 0&0&0&1
+\end{matrix}\right)
+\\
+R_y(\alpha)=
+\left(\begin{matrix}
+   cos\alpha & 0 & sin\alpha & 0 \\ 0&1&0&0\\ -sin\alpha&0&cos\alpha&0 \\ 0&0&0&1
+\end{matrix}\right)
+\\
+R_z(\alpha)=
+\left(\begin{matrix}
+   cos\alpha & -sin\alpha & 0 & 0 \\ sin\alpha&cos\alpha&0&0\\ 0&0&1&0 \\ 0&0&0&1
+\end{matrix}\right)</script><p>As you can see that the rotation around axis y have a bit difference from the others. That’s because axis y is generated by the cross product of axis z and axis x, but not x-z. The order matters!</p>
+<p>However, the axis z is generated by x cross multiply y , and axis x is generated by y cross multiply z , there seems to be a hidden rule :</p>
+<p>you can generate next axis along this letter string from left to right :</p>
+<script type="math/tex; mode=display">
+xyzxyzxyzxyzxyz...</script><p>Euler angles : (often used in flight simulators roll, pitch, yaw)</p>
+<script type="math/tex; mode=display">
+R_{xyz}(\alpha,\beta,\gamma)=R_x(\alpha)R_y(\beta)R_z(\gamma)</script><p>Rodrigues’ Rotation Formula : (at the origin by default)</p>
+<script type="math/tex; mode=display">
+R(n,\alpha)=cos(\alpha)I+(1-cos(\alpha))nn^T+sin(\alpha)
+\left(\begin{matrix}
+   0 & -n_z & n_y \\ n_z&0&-n_x\\ -n_y&n_x&0
+\end{matrix}\right)</script><p>$n$ is the vector of axis, $\alpha$ is the angle</p>
+<p>$\left(\begin{matrix}<br>   0 &amp; -n_z &amp; n_y \\ n_z&amp;0&amp;-n_x\\ -n_y&amp;n_x&amp;0<br>\end{matrix}\right)$ is the matrix form of the left vector of the cross product</p>
+<p>There is an old concept called quaternion</p>
+<h3 id="viewing-transformation"><a href="#viewing-transformation" class="headerlink" title="viewing transformation"></a>viewing transformation</h3><ul>
+<li><p>model transformation : find a good environment and prepare the models</p>
 </li>
-<li><p>perspective projection</p>
+<li><p>view transformation : find a good <strong>angle</strong></p>
+</li>
+<li><p>projection transformation : apply the projection</p>
+<p>This is called ‘MVP’  transformation</p>
 </li>
 </ul>
+<ol>
+<li><p>view/camera transformation : <strong>transform the models together with the camera</strong></p>
+<p>we need to define the camera first , </p>
+</li>
+</ol>
+<ul>
+<li><p>Position $\vec e$ , </p>
+</li>
+<li><p>Look-at/gaze direction $\hat g$ , </p>
+</li>
+<li><p>Up direction $\hat t$  </p>
+<p><strong>But</strong> We always set the camera <strong>to the origin</strong> , <strong>up at Y-axis</strong> , <strong>look at Z-axis</strong> , so if a camera is at $\hat e$ and looking at $\hat g$ and up at $\hat t$ , we need to transform it:</p>
+</li>
+<li><p>translate $\vec e$ to origin </p>
+</li>
+<li><p>rotate $\hat g$ to -Z , $\hat t$ to Y , ($\hat g \times \hat t$) to X (apply at the origin)</p>
+<p>Consider the inverse rotation ,because the rotation to origin is hard , but from origin is easy, and then <strong>inverse it again</strong> , or <strong>just transpose it</strong> because the rotation is <strong>orthometric</strong>!</p>
+<script type="math/tex; mode=display">
+R^{-1}_{view} =
+\left(\begin{matrix}
+   x_{\hat g \times \hat t} & x_t &x_{-g} & 0 
+   \\ y_{\hat g \times \hat t}&y_t&y_{-g}&0
+   \\ z_{\hat g \times \hat t}&z_t&z_{-g}&0 
+   \\ 0&0&0&1
+\end{matrix}\right)
+\rightarrow 
+R_{view} =
+\left(\begin{matrix}
+   x_{\hat g \times \hat t} & y_{\hat g \times \hat t} &z_{\hat g \times \hat t} & 0 
+   \\ x_t&y_t&z_t&0
+   \\ x_{-g}&y_{-g}&z_{-g}&0 
+   \\ 0&0&0&1
+\end{matrix}\right)</script></li>
+</ul>
+<ol>
+<li>projection transformation</li>
+</ol>
+<ul>
+<li><p>orthographic projection(正交投影)</p>
+<p>camera located at origin, up at Y, looking at <strong>-Z</strong>, that’s why OpenGL uses left hand coords.</p>
+<p>and then drop the Z coordinate to project it in X-Y plane, </p>
+<p>and translate and scale the result rectangle to $[-1,1]^2$ <strong>canonical cube</strong>(规范标准化到单位范围)</p>
+<script type="math/tex; mode=display">
+M_{ortho} = Scale \times Translate=
+\left(\begin{matrix}
+   \frac{2}{r-l} & 0 &0 & 0 
+   \\ 0&\frac{2}{t-b}&0&0
+   \\ 0&0&\frac{2}{n-f}&0 
+   \\ 0&0&0&1
+\end{matrix}\right)
+\left(\begin{matrix}
+   1 & 0 &0 & -\frac{r+l}{2} 
+   \\ 0&1&0&-\frac{t+b}{2} 
+   \\ 0&0&1&-\frac{n+f}{2}  
+   \\ 0&0&0&1
+\end{matrix}\right)</script></li>
+<li><p>perspective projection(透视投影用得最广泛，平行线不再平行，近大远小透视原理)</p>
+<p>It can be described as a scale and orthographic projection(远平面变得和近平面一样大，然后投影到近平面)$M_{persp} =M_{ortho}·M_{persp \rightarrow ortho}$</p>
+</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\perspective.PNG" alt="perspective"></p>
+<script type="math/tex; mode=display">
+y'=\frac{n}{z}y\\
+x'=\frac{n}{z}x\\
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+\rightarrow 
+\left(\begin{matrix}
+   xn/z
+   \\ yn/z
+   \\ unknown 
+   \\ 1
+\end{matrix}\right)
+=^{multi \ by \ z}=
+\left(\begin{matrix}
+   xn
+   \\ yn
+   \\ still\ unknown 
+   \\ z
+\end{matrix}\right)</script><p>we define that every point in the <strong>near plane</strong> will <strong>not be changed</strong> during the projection.</p>
+<p>the <strong>central point</strong> of the <strong>far plane</strong> will <strong>not be changed</strong> during the projection.</p>
+<p>(the coordinate of a point times a scalar equals itself)</p>
+<script type="math/tex; mode=display">
+M^{(4 \times 4)}_{persp \rightarrow ortho}·
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   xn
+   \\ yn
+   \\ still\ unknown 
+   \\ z
+\end{matrix}\right)</script><script type="math/tex; mode=display">
+M^{(4 \times 4)}_{persp \rightarrow ortho}
+=
+\left(\begin{matrix}
+   n&0&0&0
+   \\ 0&n&0&0
+   \\ ?&?&?&? 
+   \\ 0&0&1&0
+\end{matrix}\right)</script><p>but we can know that <strong>the z of the nearest plane</strong> will <strong>not be changed</strong> during the projection.</p>
+<p>so the z of the nearest plane is n:</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ n 
+   \\ 1
+\end{matrix}\right)</script><p>so:</p>
+<script type="math/tex; mode=display">
+M^{(4 \times 4)}_{persp \rightarrow ortho}
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   n&0&0&0
+   \\ 0&n&0&0
+   \\ ?&?&?&? 
+   \\ 0&0&1&0
+\end{matrix}\right)
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ n 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   xn
+   \\ yn
+   \\ n^2
+   \\ n
+\end{matrix}\right)</script><p>the third row must be something like that(the two front elements are 0):</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+0&0&A&B 
+\end{matrix}\right)
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+0&0&A&B 
+\end{matrix}\right)
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ n 
+   \\ 1
+\end{matrix}\right)
+=
+n^2
+\rightarrow 
+An+B=n^2</script><p><strong>with another property</strong> : we can find that <strong>any point’s $z_{far}$ of the farthest plane will not be changed</strong>, such as the center point$(x_c,y_c,z_c,1)$:</p>
+<script type="math/tex; mode=display">
+M^{(4 \times 4)}_{persp \rightarrow ortho}
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   n&0&0&0
+   \\ 0&n&0&0
+   \\ ?&?&?&? 
+   \\ 0&0&1&0
+\end{matrix}\right)
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   x_c
+   \\ y_c
+   \\ z_c 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+   x_cz_c
+   \\ y_cz_c
+   \\ z_c^2
+   \\ z_c
+\end{matrix}\right)</script><script type="math/tex; mode=display">
+\left(\begin{matrix}
+0&0&A&B 
+\end{matrix}\right)
+\left(\begin{matrix}
+   x
+   \\ y
+   \\ z 
+   \\ 1
+\end{matrix}\right)
+=
+\left(\begin{matrix}
+0&0&A&B 
+\end{matrix}\right)
+\left(\begin{matrix}
+   x_c
+   \\ y_c
+   \\ z_c 
+   \\ 1
+\end{matrix}\right)
+=
+z_c^2 
+\rightarrow Az_c+B=z_c^2</script><p>so with the formula 28 and 29, we can solve A and B:</p>
+<script type="math/tex; mode=display">
+A = n + z_c\\
+B = -nz_c</script><p>and then we do orthographic projection to finish it :</p>
+<script type="math/tex; mode=display">
+M_{persp} =M_{ortho}·M_{persp \rightarrow ortho}</script><p>the $M_{persp \rightarrow ortho}$ would be:</p>
+<script type="math/tex; mode=display">
+\left(\begin{matrix}
+   z_{near}&0&0&0
+   \\ 0&z_{near}&0&0
+   \\ 0&0&z_{near}+z_{far}&-z_{near}z_{far} 
+   \\ 0&0&1&0
+\end{matrix}\right)</script><h2 id="Lecture-5-6-Rasterization"><a href="#Lecture-5-6-Rasterization" class="headerlink" title="Lecture 5-6 Rasterization"></a>Lecture 5-6 Rasterization</h2><p>To draw the objects already transformed in $[1,1]^3$ cube on the screen.</p>
+<p>Aspect ratio(width/height) and vertical filed-of-view(fovY) need to be defined. </p>
+<p>The fovY is cone of vision. When fovY is small, it can easily capture the far objects and more like orthographic perspective.</p>
+<p><img src="E:\project_hexo\test\source\_data\fovY-aspect.PNG" alt="fovY-aspect"></p>
+<p>Rasterizing triangles into pixels</p>
+<p>A screen is a typical kind of raster display, which includes an array of pixels. Resolution is the size of the array. </p>
+<p>‘Raster’ is the German word for ‘Screen’, so ‘Rasterize’ is drawing onto the screen.</p>
+<p>‘Pixel’ is the abbriviation of(short for) ‘picture element’. Color is a mixture of (red,green,blue)</p>
+<p>Screen space is: </p>
+<p><img src="E:\project_hexo\test\source\_data\screen.PNG" alt="screen"></p>
+<p>pixels indices are in the form of (x,y), from (0,0) to (width-1,height-1)</p>
+<p>so we need to transform it from $[-1,1]^2$ to $[0,width]\times[0,height]$</p>
+<p>Axis aligned bounding box (AABB)</p>
+<p>After rasterizing the pixels, you will see many jaggies.</p>
+<p><a href="https://imgchr.com/i/rZmYa8" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/12/12/rZmYa8.png" alt="rZmYa8.png"></a></p>
+<h3 id="Antialiasing"><a href="#Antialiasing" class="headerlink" title="Antialiasing"></a>Antialiasing</h3><p>Sampling artifacts is inevitable. when sample too slowly but signals change too fast.(frequency too high)</p>
+<p>jaggie is one of <strong>space</strong> sampling artifacts. moire pattern is another. </p>
+<p>wagon wheel effect is the artifacts of <strong>time</strong> sampling.</p>
+<p>Blurred Aliasing is sample it and then filter it, which can not reach the effect.</p>
+<p>Antialiasing is using a filter(lowpass) to smooth the image, and then sample it.</p>
+<p>Aliases refers to two frequencies are indistinguishable at a given sampling rate.</p>
+<p>So filtering refers to getting rid of certain frequency contents.</p>
+<p>sample is repeating the frequency of the signal</p>
+<p>sparse sampling will cause aliases.</p>
+<p>In order to average the part of each pixel, we need more sample points using <strong>MSAA(multi sample antialiasing)</strong>, it’s only an approximation, like divide one pixel into 4*4 squares.</p>
+<p>The cost of MSAA is more computation.</p>
+<p>There are also FXAA(fast approximate antialiasing), replace the jagged periphery with not jagged periphery.</p>
+<p>TAA(temporal antialiasing), reuse last frame which is motionless.</p>
+<ul>
+<li>Super resolution / super sampling is familiar with that. DLSS(deep learning super sampling) can approximate it.</li>
+</ul>
+<h2 id="Lecture-7-9-Shading"><a href="#Lecture-7-9-Shading" class="headerlink" title="Lecture 7-9 Shading"></a>Lecture 7-9 Shading</h2><h3 id="Visibility-occlusion"><a href="#Visibility-occlusion" class="headerlink" title="Visibility/occlusion"></a>Visibility/occlusion</h3><ol>
+<li><p>Painter’s Algorithm</p>
+<p>Paint from back to front, overwrite in the framebuffer</p>
+<p>need to sort in depth(O(nlogn)) for n triangles, but there are some orders unresolvable.</p>
+<p><img src="E:\project_hexo\test\source\_data\unresolvable-order.png" alt="unresolvable-order"></p>
+</li>
+<li><p>Z-buffering(深度缓存)</p>
+<p>Add a depth buffer for depth values (besides the frame buffer for color values), always store the nearest value (z-value of each pixel) from camera</p>
+<ul>
+<li>But cannot deal with transparent objects</li>
+</ul>
+<p>The algorithm equals to finding the minimum (O(n) for n triangles) but not sorting.</p>
+<p>And it can be implemented in hardware for GPUs, because it’s order-irrelevance.</p>
+</li>
+</ol>
+<h3 id="Shading-the-darkening-of-coloring-of-an-illustration"><a href="#Shading-the-darkening-of-coloring-of-an-illustration" class="headerlink" title="Shading(the darkening of coloring of an illustration)"></a>Shading(the darkening of coloring of an illustration)</h3><ol>
+<li>Illumination &amp; Shading</li>
+</ol>
+<ul>
+<li><p>A simple shading model —— Blinn-Phong Reflectance Model</p>
+<p>there are basically 3 kinds of zones: </p>
+<ul>
+<li><strong>Specular highlights</strong></li>
+<li><strong>Diffuse reflection</strong> light is scattered uniformly in all directions, and the color of surface looks the same from all viewing directions.</li>
+<li><strong>Ambient lighting</strong> it’s very complicated but can be simplified as a constant.</li>
+</ul>
+<p>A shading point reflects light towards camera needs to be defined:</p>
+<ul>
+<li>Viewer direction</li>
+<li>Surface normal</li>
+<li>Light direction (for each of many lights)</li>
+<li>Surface parameters</li>
+</ul>
+<p>No shadows will be generated, we only consider its color but not shadow generated by other blocks.</p>
+<p><strong>Lambertian (Diffuse) Shading</strong></p>
+<p>The light should obey the conservation of energy. </p>
+<p><img src="E:\project_hexo\test\source\_data\light_falloff.png" alt="light_falloff"></p>
+<p><img src="E:\project_hexo\test\source\_data\diffuse_shading.png" alt="diffuse_shading"></p>
+</li>
+</ul>
+<p>  when a light achieve the shading point from back side, it poses no influence on the reflection, so we just set it as 0. $max(0,n·l)$, it has nothing to do with the $v$, because observing from any views obtains the same result.</p>
+<p>  $kd$ is not a proper definition, but Blinn-Phong Reflectance Model is just a simple model.</p>
+<p>  if $k_d$ is (1,1,1)(RGB), it means this point reflects all the light and doesn’t absorb any.</p>
+<p>  <strong>Specular Term</strong></p>
+<p>  <img src="E:\project_hexo\test\source\_data\specular.png" alt="specular"></p>
+<p>  In <strong>Phong</strong> model, the angle $\alpha$ is measured by $v$ and the reflected light, but not the $n$ and $h$.</p>
+<p>  The exponent $p$ is used to decrease the tolerance of $cos \alpha$, because:</p>
+<p>  <img src="E:\project_hexo\test\source\_data\cosa.png" alt="cosa"></p>
+<p>  $p$ is glossiness:</p>
+<p>  <img src="E:\project_hexo\test\source\_data\highlight.png" alt="highlight"></p>
+<p>  <strong>Ambient Term</strong></p>
+<p>  <img src="E:\project_hexo\test\source\_data\ambient.png" alt="ambient"></p>
+<p>   <img src="E:\project_hexo\test\source\_data\Blinn-Phong.png" alt="Blinn-Phong"></p>
+<p>  <strong>Shading Frequencies</strong></p>
+<p>  <img src="E:\project_hexo\test\source\_data\shading_frequency.png" alt="shading_frequency"></p>
+<p>  The first one is called Flat shading</p>
+<p>  <img src="E:\project_hexo\test\source\_data\flat_shading.png" alt="flat_shading"></p>
+<p>  The second one is Gouraud shading</p>
+<p>  <img src="E:\project_hexo\test\source\_data\gouraud_shading.png" alt="gouraud_shading"></p>
+<p>  The third one is Phong shading(the name of shading frequencies, Phong invented many techs), every pixel will be shaded.</p>
+<p>  <img src="E:\project_hexo\test\source\_data\phong_shading.png" alt="phong_shading"></p>
+<p>  when the number of vertice is large enough (complex geometrical structure), using simple shading frequency is enough. </p>
+<p>  <img src="E:\project_hexo\test\source\_data\frequency_and_vertice.png" alt="frequency_and_verticle"></p>
+<p>  We can get normal of every vertex by averaging surrounding face normals weighted by the area of faces.</p>
+<p>  <img src="E:\project_hexo\test\source\_data\normal_vactor.png" alt="normal_vactor"></p>
+<p>  Middle pixels need to use barycentric coordinates to interpolate.</p>
+<p>  <img src="E:\project_hexo\test\source\_data\barycentric_interpolation.png" alt="barycentric_interpolation"></p>
+<ol>
+<li><p>Graphics Pipeline (real-time rendering)</p>
+<p>pipeline is the procedure of rendering a 3D object in into 2D image, which is implemented in GPU.</p>
+<p><img src="E:\project_hexo\test\source\_data\pipeline.png" alt="pipeline"></p>
+</li>
+</ol>
+<p><strong>fragment equals to pixel</strong></p>
+<p>shader is a program in GPU that you use to define how a vertex and fragment(pixel) shaded leading to different results. You can use OpenGL language (GLSL).</p>
+<p>Note that you just need to define a pattern of a vertex of pixel, and GPU will deplot it into every instance.</p>
+<p>Vertex shader or fragment(pixel) shader.</p>
+<p>An example GLSL fragment shader program:</p>
+<p><img src="E:\project_hexo\test\source\_data\shader_example.png" alt="shader_example"></p>
+<p>There are many other shader invented, like geometry shader, creating triangle dynamically; and compute shader to reach General Purpose GPU computing.</p>
+<p>Texture</p>
+<p>Surface is 2D, but lives in 3D world space. Every 3D surface point has a place where it goes in the 2D texture image.</p>
+<p><img src="E:\project_hexo\test\source\_data\surface_2d.png" alt="surface_2d"></p>
+<p>Each triangle copies a piece of texture image to the surface. </p>
+<p><img src="E:\project_hexo\test\source\_data\texture.png" alt="texture"></p>
+<p>Each vertex of a triangle has a coordinate $(u,v)$(0~1) on the texture image. How to map the coordinates on the texture is a hard research in graphics.</p>
+<p><img src="E:\project_hexo\test\source\_data\texture_coordinate.png" alt="texture_coordinate"></p>
+<p>Not only one texture can be used in one picture, we can map many texture images. Tillable texture can match its repeats. There is an algorithm called Wang tile.</p>
+<p>The inner pixels of triangle need interpolation to confirm the coordinate on the texture.</p>
+<p><strong>Interpolation across triangles</strong></p>
+<p>We want to obtain smoothly varying values across triangles and specify values at vertices.</p>
+<p>We can obtain texture coordinates, colors and normal vectors.</p>
+<p><img src="E:\project_hexo\test\source\_data\barycentric.png" alt="barycentric"></p>
+<p>For barycentric coordinate, it’s $(\frac{1}{3},\frac{1}{3},\frac{1}{3})$. For any given point, it can be solved by the area(using cross product to calculate the area):</p>
+<p><img src="E:\project_hexo\test\source\_data\area.png" alt="area"></p>
+<p><img src="E:\project_hexo\test\source\_data\interpolation.png" alt="interpolation"></p>
+<p>The barycentric coordinates may change after projection, so we need to interpolate before projection, especially the z-value, use z-values of origin vertices to interpolate.</p>
+<p>An easy and intuitive way is </p>
+<p><img src="E:\project_hexo\test\source\_data\affine.png" alt="affine"></p>
+<p>but when the texture is too small that the screen will evaluate non-integer coordinates.</p>
+<p><img src="E:\project_hexo\test\source\_data\texel.png" alt="texel"></p>
+<p>the first one is rounding them to integers, so the neighbooring pixels will be the same(maybe $3\times3$ or $5\times5$)</p>
+<p>the second one is bilinear interpolation<img src="E:\project_hexo\test\source\_data\linear_interpolation.png" alt="linear_interpolation"></p>
+<p>the third one is taking neighbooring 16 texels </p>
+<p>when the texture is too large, it causes more serious problem——aliasing. We can’t set a pixel to the texel where it occupys. Because- the changing frequency of the texture in one pixel is high, and you can’t just sample it once.<img src="E:\project_hexo\test\source\_data\texture_too_large.png" alt="texture_too_large"></p>
+<p>Supersampling can do antialiasing but it’s costly. you can use multiple sample points in one pixel and set it to the average, like MSAA.</p>
+<p>Another way is getting the average of a area straightly without sampling.</p>
+<p><strong>Point Query &amp; Range Query</strong>(范围查询，有最大最小平均值)</p>
+<p><strong>Mipmap</strong> allowing (only fast, approx, <strong>square</strong>)range queries</p>
+<p>“multum in parvo“ —— multitude in a small space</p>
+<p><img src="E:\project_hexo\test\source\_data\mipmap.png" alt="mipmap"></p>
+<p>the sum of level 1 to 7 only take $\frac{1}{3}$ size of level 0 </p>
+<p>when we want to find the level $D$ of a pixel, we can estimate that :</p>
+<p><img src="E:\project_hexo\test\source\_data\mipmap_level.png" alt="mipmap_level"></p>
+<p>when $D$ is not integer, we can do trilinear interpolation between $D$ and $D+1$, both levels exert bilinear interpolation.</p>
+<p><img src="E:\project_hexo\test\source\_data\mipmap_interpolate.png" alt="mipmap_interpolate"></p>
+<p>but mipmap has some limitations, which can be solved by anisotropic filtering. It can deal with the rectangle footprints. </p>
+<p><img src="E:\project_hexo\test\source\_data\anisotropic.png" alt="anisotropic"></p>
+<p>There is a ripmap, three times the cost of video memory (not affect the speed), because the pixel footprint in texture sometimes is irregular (not a square):</p>
+<p><img src="E:\project_hexo\test\source\_data\irregular_pixel.png" alt="irregular_pixel"></p>
+<p>as for the diagonal footprints, we can use other methods like EWA filtering, use three circle to estimate an irregular shape.</p>
+<p><img src="E:\project_hexo\test\source\_data\ewa_filtering.png" alt="ewa_filtering"></p>
+<p>In modern GPUs, texture = memory + range query (filtering), bring data to fragment calculations.</p>
+<p>Uses for texturing:</p>
+<ul>
+<li>Environment lighting</li>
+<li>Store microgeometry</li>
+<li>Procedual textures</li>
+<li>Solid modeling</li>
+<li>Volume rendering</li>
+</ul>
+<p><strong>Environment map</strong></p>
+<p>the light comes from infinite distance, the depth information is unconsidered, only the intensity and color.</p>
+<p><strong>Spherical Environment map</strong><img src="E:\project_hexo\test\source\_data\spherical_environment_map.png" alt="spherical_environment_map"></p>
+<p>it can be unfolded to like this:</p>
+<p><img src="E:\project_hexo\test\source\_data\unfold.png" alt="unfold"></p>
+<p>but the top and buttom prone to distortion, so we can store the info in a cube but not the sphere.</p>
+<p><img src="E:\project_hexo\test\source\_data\cube_map.png" alt="cube_map"></p>
+<p><img src="E:\project_hexo\test\source\_data\cube_unfold.png" alt="cube_unfold"></p>
+<p>Textures can also affect shading, not only colors.</p>
+<p>It can store height or normal, using a single-channel image, when normal changes the shading will be changed too.</p>
+<p>bump / normal mapping (凹凸贴图/法线贴图)：不改变几何本身，只改变纹理使之看起来像凹凸<img src="E:\project_hexo\test\source\_data\bump_mapping.png" alt="bump_mapping"><img src="E:\project_hexo\test\source\_data\new_normal.png" alt="new_normal"></p>
+<p>切线的斜率可由差分高度$\frac{dp}{1}$求出，随即得到切线的向量$(1,dp)$，法线的向量与切线垂直，因此为$(-dp,1)$.</p>
+<p>In 3-dimension case: the normal $n(p)$ is in a <strong>local</strong> coordinate $s-t$, after changed by the texture we transform it back to global coordinate.</p>
+<p><img src="E:\project_hexo\test\source\_data\new_normal_3d.png" alt="new_normal_3d"></p>
+<p>There is a more advanced method——<strong>displacement mapping</strong>.</p>
+<p><img src="E:\project_hexo\test\source\_data\displacement_mapping.png" alt="displacement_mapping"></p>
+<p>since the bump mapping doesn’t move the vertices, the shadow and the outline will still be a sphere. </p>
+<p>The displacement mapping also requires a big enough sampling rate, because the triangle must be smaller than the texture frequency to capture the change of texture. (模型要足够细致)</p>
+<p>DirectX 有动态细分方法(dynamic tessellation)根据需要来决定模型有多细致。</p>
+<p>此外还有过程纹理，比如三维模型，内部空间中任何一个点都有纹理信息，但并不是真的生成了内部的纹理图，而是用一个噪声函数来生成</p>
+<p>纹理还能保存一些计算结果，比如阴影，可以先计算环境光遮蔽而不在shading里计算，然后记录在纹理里。</p>
+<p>还有三维的纹理，比如核磁共振，会返回一个三维信息包括密度深度，可以进行体渲染。</p>
+<h2 id="Lecture-10-12-Geometry"><a href="#Lecture-10-12-Geometry" class="headerlink" title="Lecture 10-12 Geometry"></a>Lecture 10-12 Geometry</h2><p>Examples: liquid, cloth, solid</p>
+<p><strong>Implicit</strong> (不告诉你点在哪，告诉你点满足什么关系)</p>
+<p>E.g. sphere : all points in 3D, where $x^2+y^2+z^2-1=0$</p>
+<p>More generally, $f(x,y,z)=0$</p>
+<p>$(\frac{1}{3},\frac{1}{4},\frac{4}{3})$ inside or outside? just plug it in the formula.</p>
+<p><strong>Sampling</strong> is <strong>hard</strong> but estimation of <strong>inside/outside</strong> is <strong>easy</strong>.</p>
+<p><strong>Explicit</strong></p>
+<p>All points are given directlt or via <strong>parameter mapping</strong>.</p>
+<p>$f:(u,v)→(x,y,z)$</p>
+<p>E.g. $f(u,v)=((2+cosu)cosv,(2+cosu)sinv,sinu)=(x,y,z)$, just plug in values of u,v we can get the x,y,z.</p>
+<p><strong>Sampling</strong> is <strong>easy</strong> but estimation of <strong>inside/outside</strong> is <strong>hard</strong>.</p>
+<p><strong>So which one to choose depends on the task!</strong> geometry is not the best but hard.</p>
+<p>Many ways to represent geometry:</p>
+<p>Algebraic surfaces (implicit)</p>
+<p><img src="E:\project_hexo\test\source\_data\algebraic_surfaces.png" alt="algebraic_surfaces"></p>
+<p>Constructive Solid Geometry(CSG) (implicit)</p>
+<p><img src="E:\project_hexo\test\source\_data\Constructive_solid.png" alt="Constructive_solid"></p>
+<p>Distance Functions (implicit) (very useful)</p>
+<p><img src="E:\project_hexo\test\source\_data\distance_functions.png" alt="distance_functions"><img src="E:\project_hexo\test\source\_data\distance_functions2.png" alt="distance_functions2"></p>
+<p>Level Set Methods(implicit) (similar to Distance Functions)</p>
+<p><img src="E:\project_hexo\test\source\_data\Level_set_method.png" alt="Level_set_method"></p>
+<p>only store the function in the grid, like the contour line in the geography.</p>
+<p>It can also be a 3D grid, related to the 3D texture.</p>
+<p><img src="E:\project_hexo\test\source\_data\level_set_3D.png" alt="level_set_3D"></p>
+<p>It can also used in physical simulation</p>
+<p><img src="E:\project_hexo\test\source\_data\level_set_physical.png" alt="level_set_physical"></p>
+<p>Fractals (implicit)</p>
+<p>Exhibit self-similarity, detail at all scales. Like recursion.</p>
+<p>But it’s hard to control the shape.</p>
+<p><img src="E:\project_hexo\test\source\_data\implicit.png" alt="implicit"></p>
+<p>Point Cloud (simplest explicit)</p>
+<p>useful for large datasets(&gt;&gt; 1 point/pixel)</p>
+<p>often converted into polygon mesh</p>
+<p>difficult to draw in undersampled regions</p>
+<p>Polygon Mesh (explicit)</p>
+<p><img src="E:\project_hexo\test\source\_data\polygon_mesh.png" alt="polygon_mesh"><img src="E:\project_hexo\test\source\_data\obj_file.png" alt="obj_file"></p>
+<p>八行顶点坐标，十二行纹理坐标(本应六个面各四个点，但存在共用)，六个面法线坐标(八行中有冗余)，十二行顶点关系(第几个顶点/第几个纹理坐标/第几个法线)</p>
+<p>Bezier Curves (explicit)</p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves.png" alt="bezier_curves"></p>
+<p>(确定起始点)</p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves_algorithm.png" alt="bezier_curves_algorithm"></p>
+<p>(找时间t，在两个线段上各找t的点相连，得到新线段的t点，所有从0到1的t点形成曲线)</p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves_algorithm2.png" alt="bezier_curves_algorithm2"></p>
+<p>(是一个递归算法，不断划分直到只剩一条线段，不断进行线性插值)</p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves_algorithm3.png" alt="bezier_curves_algorithm3"></p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves_algorithm4.png" alt="bezier_curves_algorithm4"></p>
+<p>(这个系数就是二项分布多项式的展开式$((1-t)+t)^n$)</p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves_algorithm5.png" alt="bezier_curves_algorithm5"></p>
+<p>这个$(n i)$不是矩阵，是上下标的排列组合.</p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_curves_algorithm6.png" alt="bezier_curves_algorithm6"></p>
+<p>系数$B^n_i$在任一个t时总和始终为1.</p>
+<p>贝塞尔曲线经过仿射变换后与仿射变换后的顶点形成的贝塞尔曲线不变</p>
+<p>The bezier curve after affine transformed is the same as the one formed by affine transformed control points.  </p>
+<p>The curve is within convex hull of control points.</p>
+<p><strong>piecewise bezier curves</strong></p>
+<p>usually use cubic bezier(every four control points for one piece)</p>
+<p><strong>Bicubic Bezier surface patch</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\bezier_surface.png" alt="bezier_surface"></p>
+<p><img src="E:\project_hexo\test\source\_data\mesh_operation.png" alt="mesh_operation"></p>
+<p><img src="E:\project_hexo\test\source\_data\mesh_subdivision.png" alt="mesh_subdivision"></p>
+<p><img src="E:\project_hexo\test\source\_data\mesh_simplification.png" alt="mesh_simplification"></p>
+<p><img src="E:\project_hexo\test\source\_data\mesh_regularization.png" alt="mesh_regularization"></p>
+<p><img src="E:\project_hexo\test\source\_data\loop_subdivision.png" alt="loop_subdivision"></p>
+<p>Loop is the family name of the proposer, does not mean the circulation.</p>
+<p><img src="E:\project_hexo\test\source\_data\loop_subdivision2.png" alt="loop_subdivision2"></p>
+<p>For old vertices, they consider themselves in part.</p>
+<p><img src="E:\project_hexo\test\source\_data\loop_subdivision3.png" alt="loop_subdivision3"></p>
+<p><img src="E:\project_hexo\test\source\_data\Catmull-Clark_subdivision.png" alt="Catmull-Clark_subdivision"></p>
+<p>Each subdivision step:</p>
+<ul>
+<li><p>add vertex in each face</p>
+</li>
+<li><p>add midpoint on each edge</p>
+</li>
+<li>connect all new vertices</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\Catmull-Clark_subdivision2.png" alt="Catmull-Clark_subdivision2"></p>
+<p>The number of extraodinary vertices increase. Non-quad faces decrease. But when there is no more non-quad faces, the extraodinary vertices will no long increase.</p>
+<p><img src="E:\project_hexo\test\source\_data\Catmull-Clark_subdivision3.png" alt="Catmull-Clark_subdivision3"></p>
+<p><img src="E:\project_hexo\test\source\_data\Catmull-Clark_subdivision4.png" alt="Catmull-Clark_subdivision4"></p>
+<p><img src="E:\project_hexo\test\source\_data\Catmull-Clark_subdivision5.png" alt="Catmull-Clark_subdivision5"><img src="E:\project_hexo\test\source\_data\mesh_simplification2.png" alt="mesh_simplification2"></p>
+<p>Sometimes a compromise is needed, when a object is far away or small, it doesn’t need to be subtle. Such as the concept of mipmap.</p>
+<p>The first one is using flat shader, phone shader will perform better.</p>
+<p><img src="E:\project_hexo\test\source\_data\edge_collapsing.png" alt="edge_collapsing"></p>
+<p>but how to decide which edge to be collapsed</p>
+<p><img src="E:\project_hexo\test\source\_data\edge_collapsing2.png" alt="edge_collapsing2"></p>
+<p>score each edge with quadric error, compute the <strong>midpoint</strong> of the edge.</p>
+<p>when collapse an edge with the QE is smallest, we need to update other edges——using pile or piority queue(堆或优先队列)</p>
+<p><strong>Shadow mapping</strong></p>
+<p>Because shading is hard to possess with shadow, so there is a structure named <strong>shadow map</strong>.</p>
+<p>An image-space algorithm</p>
+<ul>
+<li>no knowledge of scene’s geometry during shadow computation</li>
+<li>must deal with aliasing artifacts</li>
+</ul>
+<p>the points <strong>not in shadow</strong> must be seen both <strong>by the light</strong> and <strong>by the camera</strong>. </p>
+<p>Compare the depth info of each point between light view and eye view. The depth info from light is <strong>shadow map</strong>(depth map actually). The depth is the distance from the spotted point to light source.</p>
+<p><img src="E:\project_hexo\test\source\_data\shadow_map.PNG" alt="shadow_map"></p>
+<p>If the <strong>resolution</strong> of shadow map is smaller than the scene, there will be aliasing.</p>
+<p><strong>Hard shadow</strong> (each point is in or out of the shadow)非黑即白</p>
+<p><strong>Soft shadow</strong> (results from the scale of light source)</p>
+<p><img src="E:\project_hexo\test\source\_data\Hard_shadow.PNG" alt="Hard_shadow"></p>
+<h2 id="Lecture-12-Ray-Tracing"><a href="#Lecture-12-Ray-Tracing" class="headerlink" title="Lecture 12 Ray Tracing"></a>Lecture 12 Ray Tracing</h2><p>Rasterization couldn’t handle global effects well because of soft shadows and multiple bouncing light (Glossy reflection, Indirect illumination).</p>
+<p>Rasterization is fast (real-time over 30fps) but quality is low. Ray tracing is accurate but very slow (offline such as film, over 10K cpu hours to render one frame in production).</p>
+<p><strong>Basic ray tracing algorithm</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing.PNG" alt="ray_tracing"></p>
+<p><strong>Ray Casting</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing2.PNG" alt="ray_tracing2"></p>
+<p>(Recursive) Whitted-Style Ray Tracing(T. Whitted, 1979) (not the most modern method)</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing3.PNG" alt="ray_tracing3"></p>
+<p><strong>Refraction</strong> and <strong>Reflection</strong> need to be considered. There will be an energy decay, and there are infinite light rays. So we can only simulate finite rays. </p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing4.PNG" alt="ray_tracing4"></p>
+<p>the shadow rays are used to judge the visibility.</p>
+<p><strong>Ray-surface Intersection </strong></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing5.PNG" alt="ray_tracing5"></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing6.PNG" alt="ray_tracing6"></p>
+<script type="math/tex; mode=display">
+at^2+bt+c=0,where \\
+a=d·d \\
+b=2(o-c)·d \\
+c=(o-c)^2-R^2 \\
+t = \frac{-b\pm\sqrt{b^2-4ac}}{2a}</script><p>$t$ must be real and postive.</p>
+<p>Extend to general implicit surface: $P:f(P)=0$</p>
+<p>Substitute ray equation: $f(o+td)=0$</p>
+<p><strong>Ray Intersection With Triangle Mesh</strong></p>
+<p>You can test out if a point is inside or ouside of the object. Inside of a <strong>2D closed curve</strong>, any <strong>ray from a point</strong> will <strong>intersect(tangency not included)</strong> the curve an <strong>odd number of times</strong>. When it comes to 3D, results the same.</p>
+<ul>
+<li><p>Simple idea: Intersect ray with each triangle </p>
+</li>
+<li><p>simple bu</p>
+</li>
+<li>t too slow, if the resolution of screen is 4k and the object has 100k triangle mesh.</li>
+<li>There will be 0 or 1 intersections, ignoring multiple intersections like the ray coplanar with the triangle mesh.</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing8.PNG" alt="ray_tracing8"></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing9.PNG" alt="ray_tracing9"></p>
+<p>The point $P$ is that of the intersaction of ray and plane.</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing10.PNG" alt="ray_tracing10"></p>
+<p>Then we can judge if the point $P$ is in the plane. </p>
+<p>And when slabs perpendicular to some axises, it would be a bit easy to calculate.</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing17.PNG" alt="ray_tracing17"></p>
+<p>注意上式的下标$x$，当slabs垂直于$x$轴时，$t$取决于$x$坐标.</p>
+<p>But there is an another method to calculate directly whether the point $P$ is in the plane, using Cramer’s Rule.</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing11.PNG" alt="ray_tracing11"></p>
+<p>If $P$ is in the triangle, then $(1-b_1-b_2),b_1,b_2$ must be positive.</p>
+<p>Note that the ray in the view need to be translated and scaled to $[-1,1]^2$ <strong>canonical cube</strong>(规范标准化到单位范围)</p>
+<p><strong>Acceleration</strong></p>
+<ul>
+<li><p>Bounding Volumes (simple but efficient)</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing13.PNG" alt="ray_tracing13"></p>
+</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing12.PNG" alt="ray_tracing12"></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing14.PNG" alt="ray_tracing14"></p>
+<p>The time a ray stay inside of the box is the intersection of time the ray pass through three pairs of slabs.</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing15.PNG" alt="ray_tracing15"><img src="E:\project_hexo\test\source\_data\ray_tracing16.PNG" alt="ray_tracing16"></p>
+<p>Using AABBs to accelerate ray tracing (加速判断光线与哪个物体相交，返回交点)</p>
+<h3 id="uniform-grids"><a href="#uniform-grids" class="headerlink" title="uniform grids"></a>uniform grids</h3><p><img src="E:\project_hexo\test\source\_data\ray_tracing18.PNG" alt="ray_tracing18"></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing19.PNG" alt="ray_tracing19"></p>
+<p>The calculation of intersection bewteen ray and grid is fast, while ray and object is slow.</p>
+<p>The grid test order is the direction of ray，(光线方向为右上，则下一个方格为当前右边或上边)</p>
+<p>same way as the rasterization of a line.</p>
+<h3 id="spatial-partitions-computational-geometry"><a href="#spatial-partitions-computational-geometry" class="headerlink" title="spatial partitions (computational geometry)"></a>spatial partitions (computational geometry)</h3><p><img src="E:\project_hexo\test\source\_data\ray_tracing20.PNG" alt="ray_tracing20"></p>
+<p><strong>Oct-Tree</strong></p>
+<p>停止-比如右下角切分后有三个grid不包含物体，则这次切分是不必要的</p>
+<p>但是人们不喜欢用，当数据的维度n更高时，需要划分2的n次方，于是与维度无关的KD-Tree出现了</p>
+<p><strong>KD-Tree</strong></p>
+<p>交替横竖划分，保持划分均匀，保持二叉树性质. 如果是高维，仍是每个维度轮流划分</p>
+<p> <img src="E:\project_hexo\test\source\_data\ray_tracing21.PNG" alt="ray_tracing21"></p>
+<p>When a ray intersects with a leaf node, test all objects in the node. </p>
+<p>When a ray intersects with an internal node, test all the son nodes.</p>
+<p>注意左右子节点如果都有光线相近，需要判断光线相交点的距离远近，因为是两个节点分别判断，所以遮挡关系要在这里处理。</p>
+<p>But nowadays less and less people use it, because it’s hard to tell if a triangle intersect with a bounding box. Besides, one object may be in several bounding boxes.</p>
+<p><strong>BSP-Tree</strong></p>
+<p>对空间的二分，每次都选不同方向，维度越高越不好计算，需要用超平面划分空间</p>
+<h3 id="Object-Partitions-amp-Bounding-Volume-Hierarchy-BVH"><a href="#Object-Partitions-amp-Bounding-Volume-Hierarchy-BVH" class="headerlink" title="Object Partitions &amp; Bounding Volume Hierarchy (BVH)"></a>Object Partitions &amp; Bounding Volume Hierarchy (BVH)</h3><p><img src="E:\project_hexo\test\source\_data\ray_tracing22.PNG" alt="ray_tracing22"></p>
+<ul>
+<li>Find bounding box</li>
+<li>Recursively split set of objects in two subsets</li>
+<li><strong>Recompute</strong> the bounding box of the subsets</li>
+<li>Stop when necessary</li>
+<li>Store objects in each leaf node</li>
+</ul>
+<p>包围盒重叠是OK的，如何划分是个研究的方向.</p>
+<p>How to subdivide a node?</p>
+<ul>
+<li>Choose a dimension to split</li>
+<li>Heuristic 1 Always choose the longest axis in node</li>
+<li>Heuristic 2 Split node at location of median object(均匀划分)，keep the tree balanced, then the depth will be minimized.</li>
+</ul>
+<p>需要对三角形重心排序，快速划分，O(n)下找到第n大的数</p>
+<h3 id="Radiometry（辐射度量学）"><a href="#Radiometry（辐射度量学）" class="headerlink" title="Radiometry（辐射度量学）"></a>Radiometry（辐射度量学）</h3><p>Measurement system and units(单位) for illumination</p>
+<p>Spatial properties of light</p>
+<p>Radiant flux, intensity, irradiance, radiance</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing23.PNG" alt="ray_tracing23"></p>
+<p>lumen表示灯的亮度，越亮表示单位时间内辐射越多光子.</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing24.PNG" alt="ray_tracing24"></p>
+<p><strong>Radiant Intensity</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing25.PNG" alt="ray_tracing25"></p>
+<p>$sr$ is the unit of <strong>steradians</strong>(立体角的单位,球面度或平方度)</p>
+<p><strong>Angles and Solid Angles</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing26.PNG" alt="ray_tracing26"></p>
+<p><strong>Differential Solid Angles</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing27.PNG" alt="ray_tracing27"></p>
+<script type="math/tex; mode=display">
+\Omega = \int_{s^2}dw=\int_0^{2\pi}\int_0^{\pi}sin\theta d\theta d\phi = 4\pi</script><p>$\omega$ is the direction vector of unit length, $d\omega$ is related to the $sin\theta$, because the quator is wider than the pole.</p>
+<p><img src="E:\project_hexo\test\source\_data\ray_tracing28.PNG" alt="ray_tracing28"></p>
+<p><strong>Irradiance</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\irradiance.png" alt="irradiance"></p>
+<p>需要与Radiant Intensity区分开来，前者是power对立体角的微分, the irradiance is the perpendicular power per <strong>unit area incident</strong> on a surface point.</p>
+<p><strong>Lambert’s Cosine Law</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\irradiance_lambert_law.png" alt="irradiance_lambert_law"></p>
+<p><strong>光的衰减实际上是irradiance的衰减，而不是intensity，因为随着距离的增加，辐照面积增加了，而intensity只和立体角有关</strong></p>
+<p><strong>Radiance</strong></p>
+<p>Radiance is the power per unit solid angle, per projected unit area.</p>
+<p>It’s a fundamental field quantity that describes the distribution of light in an environment.</p>
+<p>Radiance is the quantity associated with a ray, and rendering is all about computing radiance.</p>
+<p><img src="E:\project_hexo\test\source\_data\radiance.png" alt="radiance"></p>
+<p>So it’s also : <strong>irradiance per solid angle</strong> and <strong>intensity per projected unit area</strong></p>
+<p>radiance 就是有方向性(每个立体角)的 irrandiance </p>
+<p><strong>Bidrectional Reflectance Distribution Function(BRDF)</strong></p>
+<p>这个函数能计算出一微小面积吸收能量后往某一方向反射出去的比例。</p>
+<p><img src="E:\project_hexo\test\source\_data\BRDF.png" alt="BRDF"></p>
+<p>把一个小块收到的入射的irradiance(总的)，找一个出射立体角发射出去radiance(单位立体角的)</p>
+<p><strong>The Reflection Equation</strong> 对一个视线方向，把每一个入射的光会反射的比例加起来</p>
+<p><img src="E:\project_hexo\test\source\_data\BRDF2.png" alt="BRDF2"></p>
+<p>但是由于光线在物体间会弹射，一个物体的$L_r(p,w_r)$会成为其他物体的$L_i(p,w_i)$，所以它有点像递归的形式。</p>
+<p>$H^2$是整个半球的立体角，因为考虑反射情况下没有底下入射的光线(那将是折射)</p>
+<p><strong>The Rendering Equation</strong>(在表面上的光线传播基本都适用这一条)</p>
+<p>如果物体本身会辐射radiance，那么加上自身的radiance就得到了整体的渲染方程</p>
+<p>$L_o(p,w_o)=L_e(p,w_o)+\int_{H^2}{f_r(p,w_i,w_o)L_i(p,w_i)(n·w_i)} \,{\rm d}w_i$</p>
+<p>其中$cos\theta_i$就是$(n·w_i)$, 因为$n·w_i=|n||w_i|cos\theta_i$, where $n,w_i=1$.</p>
+<p><img src="E:\project_hexo\test\source\_data\rendering_equation.png" alt="rendering_equation"></p>
+<p>可以写成简单的算子符号，K是反射操作符</p>
+<p>$L=E+KL$</p>
+<p><img src="E:\project_hexo\test\source\_data\rendering_equation2.png" alt="rendering_equation2"></p>
+<p><img src="E:\project_hexo\test\source\_data\rendering_equation3.png" alt="rendering_equation3"></p>
+<p>一次弹射是直接光照，两次及以上是间接光照，全局光照就是直接和间接所有光照之和。</p>
+<p>计算光线弹射次数越多时，画面就会越亮，最终会收敛到一定亮度(能量守恒情况下)。对于玻璃等透光物体，一层玻璃需要计算一次弹射才能看见亮光，(零次反射就是光全被挡住)，一个玻璃球需要两次光线弹射才能透出来光。</p>
+<p><strong>Monte Carlo Integration</strong> used to solve an definite integral(解决一个定积分)</p>
+<p><img src="E:\project_hexo\test\source\_data\monte_carlo.png" alt="monte_carlo"></p>
+<p>使用均匀采样的随机变量，概率密度函数(PDF)为一个constant</p>
+<p><img src="E:\project_hexo\test\source\_data\monte_carlo2.png" alt="monte_carlo2"></p>
+<p>积分域在$p(x)$中已经体现出来了，因此蒙特卡洛积分只考虑采样次数，不管$f(x)$和它的积分域</p>
+<ul>
+<li><p>The more samples, the less variance</p>
+</li>
+<li><p>Sample on x, integrate on x.</p>
+</li>
+</ul>
+<p><strong>Path Tracing</strong></p>
+<p>由于whitted-style ray tracing的两个粗糙性质：</p>
+<ul>
+<li>光线打到光滑物体上时会沿着镜面方向反射或折射方向折射</li>
+<li>光线打到漫反射物体上时停止反射</li>
+</ul>
+<p>Path Tracing是为了解决whitted-style ray tracing的不符合物理规律的地方</p>
+<p>比如一个例子The Utah teapot，镜面带磨砂的材质会导致glossy reflection，如果只做镜面反射是无法呈现glossy的。它在镜面反射的同时还会发射一些周围区域。</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing.png" alt="path_tracing"></p>
+<p>另一个例子The Cornell box， 漫反射物体实际上反射无数条光线，如果直接不考虑则会丢失很多亮度。墙壁上的光反射到箱子上，出现了color bleeding， 指颜色跑到了别的物体上。</p>
+<p>这一例子被用来广泛测试全局光照。</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing2.png" alt="path_tracing2"></p>
+<p>So the rendering equation is correct, because it fixes the physical porperties.</p>
+<p>Then we can use Mente Carlo Solution to sovle the integral over the hemishpere in the rendering equation. $\int_{H^2}{f_r(p,w_i,w_o)L_i(p,w_i)(n·w_i)} \,{\rm d}w_i$</p>
+<script type="math/tex; mode=display">
+pdf(w_i) = \frac{1}{2\pi}</script><p>the area of hemisphere is $2\pi$ since the area of sphere is $4\pi$</p>
+<script type="math/tex; mode=display">
+L_o(p,w_o) \approx \frac{1}{N}\sum^N_{i=1}\frac{f_r(p,w_i,w_o)L_i(p,w_i)(n·w_i)}{pdf(w_i)}</script><p><img src="E:\project_hexo\test\source\_data\path_tracing3.png" alt="path_tracing3"></p>
+<p>Only consider <strong>the ray hit the light</strong>, which means the <strong>direct lumination</strong>.</p>
+<p>Then how to introduce <strong>indirect lumination</strong>, using the <strong>recursive algorithm</strong>.</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing4.png" alt="path_tracing4"></p>
+<p>But there will be quantity explosion, because the times of bounces increase exponentially.</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing5.png" alt="path_tracing5"></p>
+<p>If only use <strong>1 ray(N = 1)</strong> to trace each shading point:</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing6.png" alt="path_tracing6"></p>
+<p>In case the result being too noisy, we can use more paths in one pixel and average their radiance:</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing7.png" alt="path_tracing7"></p>
+<p>The implement is similar to ray casting in ray tracing:</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing8.png" alt="path_tracing8"></p>
+<p>There is <strong>another problem</strong> that the recursive algorithm will never stop, because in reality the light does not stop bouncing indeed.</p>
+<p>And cutting the bounces equals to cutting the energy!</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing9.png" alt="path_tracing9"></p>
+<p>The expectation result of shading $L_o$ will not change if we divide the result by probability(增强光照以满足期望总量)</p>
+<p>$E = P \times \frac{L_o}{P} + (1-P)\times 0 = L_o$</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing10.png" alt="path_tracing10"></p>
+<p>But it’s not very efficient， 因为着色点是均匀地(pdf为常数)向周围发射paths，如果光源很小，则大多数path是wasted的。所以可以用一个合适的pdf。或者直接在光源上采样，这样pdf仍为常数(向光源方向的均匀采样)。</p>
+<p>Since the rendering equation integrates on the solid angle $d\omega$, so we need to find the relationship between $d\omega$ and $dA$</p>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing11.png" alt="path_tracing11"></p>
+<script type="math/tex; mode=display">
+shade(p,w_o)=L_o(x,w_o)
+=\int_{H^2}{f_r(x,w_s,w_o)L_i(x,w_s)cos\theta} \,{\rm d}w_s \\ =\int_{A}{f_r(x,w_s,w_o)L_i(x,w_s)\frac{cos\theta'cos\theta}{||x'-x||^2}} \,{\rm d}A \\ 
+\approx \frac{1}{N}\sum^N_{i=1}\frac{f_r(x,w_s,w_o)L_i(x,w_s)(cos\theta_i'cos\theta_i)}{pdf(w_i)||x'-x||^2}</script><p>此时由于转换了积分域，已经在光源上积分$dA$了，所以pdf仍为常数$1/A$.</p>
+<p>现在，对光的采样从最初的随机均匀半球地采样，判断是否碰到光源，变成了两个部分：</p>
+<ol>
+<li>from light source(direct sample, no need to have Russian Roulette)</li>
+<li>from other reflectiors(indirect, use RR to send many paths)</li>
+</ol>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing12.png" alt="path_tracing12"></p>
+<ul>
+<li>对于路径追踪来说，对点光源的采样是最难的，比如概率，需要很精确才能做对，所以通常做成很小的面积光源</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\path_tracing13.png" alt="path_tracing13"><img src="E:\project_hexo\test\source\_data\path_tracing14.png" alt="path_tracing14"></p>
+<p>现在生成一张图要么用光栅化，要么用ray tracing(现代意义上的)</p>
+<p>There are still some problems remain:</p>
+<ul>
+<li><p>uniformly sampling the hemisphere</p>
+<p>How? And in general, how to sample any function? (sampling)</p>
+</li>
+<li><p>Monte Carlo integration allows arbitrary pdfs</p>
+<p>What’s the best choice? (that’s called Importance Sampling)</p>
+</li>
+<li><p>Do random numbers matter？</p>
+<p>Yes!(low discrepancy sequences)</p>
+</li>
+<li><p>Can I sample the hemisphere and the light?</p>
+<p>Yes!(multiple importance sampling-MIS better than both individuals)</p>
+</li>
+<li><p>The radiance of a pixel is the average of radiance on all paths passing through it</p>
+<p>Why? Will weighted be better? (pixel reconstruction filter)</p>
+</li>
+<li><p>Is the radiance of a pixel the color of a pixel?</p>
+<p>No (gamma correction伽马矫正, curves(high dynamic range(HDR)图), color space)</p>
+</li>
+</ul>
+<h2 id="Lecture-17-Materials-and-Appearances"><a href="#Lecture-17-Materials-and-Appearances" class="headerlink" title="Lecture 17 Materials and Appearances"></a>Lecture 17 Materials and Appearances</h2><p>Materials strongly related to light</p>
+<p>Material = BRDF</p>
+<p>Diffuse material can also has a coefficient.</p>
+<p>BRDF of diffuse:(漫反射的BRDF)</p>
+<ul>
+<li><p>Light is equally reflected in each output direction</p>
+</li>
+<li><p>Assume the incident light is uniform, and the sum of the output light is the same uniform as the incident light.</p>
+</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\17_Material.png" alt="17_Material"></p>
+<p>Since</p>
+<script type="math/tex; mode=display">
+L_i = L_o</script><p>we get</p>
+<script type="math/tex; mode=display">
+f_r=\frac{1}{\pi}</script><p>we can also add a coefficient $\rho$ called <strong>albedo</strong>, which can be three channels for color or single channel.</p>
+<p>抛光的镜子</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material2.png" alt="17_Material2"></p>
+<p>有折射有反射的玻璃和水，BTDF是计算折射的公式，transmit折射，BSDF是BRDF和BTDF的统称，Scattering散射。</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material3.png" alt="17_Material3"></p>
+<p>求反射光线角度的两种方法</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material4.png" alt="17_Material4"></p>
+<script type="math/tex; mode=display">
+w_o+w_i=2\times\overrightarrow{n} \\
+\overrightarrow{n}=w_icos\theta \\</script><p>since $w_i$ is unit.</p>
+<script type="math/tex; mode=display">
+w_o+w_i = 2\times cos\theta\overrightarrow{n}=2(w_i·\overrightarrow{n})\overrightarrow{n} \\
+w_o = -w_i+2(w_i·\overrightarrow{n})\overrightarrow{n}</script><p>第二种方法是设定$\phi$和$\theta$两个角，$\theta$由反射定律得出反射与入射相等，$\phi_o$与$\phi_i$方向相反，相隔一个$\pi$.</p>
+<p>镜面反射和折射的BRDF不容易写出，镜面反射会集中在一个方向</p>
+<p><strong>Specular Refraction</strong></p>
+<p>仍然考虑几何光学，沿直线传播，不考虑波的性质，只有不同波长不同折射率。</p>
+<p>Caustic焦散——水表面凹凸不平导致水底一些区域接收到多个方向的光线折射，对于渲染是特别难的</p>
+<p><strong>Snell’s Law</strong>折射定律</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material5.png" alt="17_Material5"></p>
+<p>折射率越高，不同波长的光被折射的程度差异就会加大，所以看钻石会闪闪发光.</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material6.png" alt="17_Material6"></p>
+<p>当</p>
+<script type="math/tex; mode=display">
+1-(\frac{\eta_i}{\eta_t})^2(1-cos^2\theta_i)<0</script><p>$cos\theta_t$不存在，即折射不可能发生，此时</p>
+<script type="math/tex; mode=display">
+\frac{\eta_i}{\eta_t}>1</script><p>折射介质的折射率较小时，会发生全反射现象</p>
+<p>比如从水到空气，会发生snell’s window/circle 现象，people can only see things of the air in a cone，the ray beyond 97.2° will be reflect to the buttom of the pool.</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material7.png" alt="17_Material7"></p>
+<p><strong>Fresnel Reflection / Term</strong> 菲涅尔项</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material8.png" alt="17_Material8"></p>
+<p>it can estimate how much energy is reflected and how much is transmitted. </p>
+<p>Taking the <strong>dielectric</strong> material($\eta$=1.5) as example:</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material9.png" alt="17_Material9"></p>
+<p>When incident light is perpendicular to the normal, it almost totally reflects. When it is parallel to the normal(be perpendicular to the surface), it almost totally entry the objects.</p>
+<p><strong>Polarization</strong> means the light wave only fluctrate in only one direction.</p>
+<p>Another example is <strong>Conductor</strong>(like metal) material:</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material10.png" alt="17_Material10"></p>
+<p>When the incident light is perpendicular to the surface, the reflactance is still high. That’s why we use metal as mirror(often Tin).</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material11.png" alt="17_Material11"></p>
+<p>There is an easy approximation——<strong>Schlick’s approximation</strong>, just a curve from 0 to 1</p>
+<script type="math/tex; mode=display">
+R(\theta)=R_0+(1-R_0)(1-cos\theta)^5 \\ 
+R_0=(\frac{n_1-n_2}{n_1+n_2})^2</script><p>$R_0$为基准反射率，与两介质反射率有关。</p>
+<p><strong>Microfacet Material</strong> 微表面材质，微表面模型，基于实际物理规则的材质，SOTA统治级别的模型，在电影里如果用到PBR(physical based rendering)，就一定会用到微表面模型。</p>
+<p>From far away, the sags and crests can hardly be seen, the macrosurface is basically flat.</p>
+<p>But from near, the microsurface might be bumpy.</p>
+<p>远看是材质，近看是几何，图形学上区分两者.</p>
+<p>At microfacets, each microfacet is seen as a specular mirror, each microfacet has its own normal. Then the roughness of the surface can be represented by the distribution of microfacets’ normals.</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material12.png" alt="17_Material12"></p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material13.png" alt="17_Material13"></p>
+<p>Only the normal whose direction meets the <strong>half vector</strong> can be reflected to the specific angle.</p>
+<p>so we only need to find how much is the direction in the distribution.</p>
+<p>When the light is almost parallel to the surface, it’s called <strong>grazing angle</strong> 掠射角度, the bulges of the surface itself will self-block other bulges. </p>
+<p>The <strong>shadowing-masking term</strong> is meant to deal with this.</p>
+<p><strong>Isotropic / Anisotropic Materials</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material14.png" alt="17_Material14"></p>
+<p><strong>Anisotropic</strong> 在BRDF上表示为——入射和出射的方位角旋转位置后得到的BRDF不同，为各向异性。即与出入射方位角的绝对位置有关，尽管出入射的相对位置没有改变。</p>
+<p>BRDF可以表示为两个角度的函数， $f_r(\theta_i,\phi_i;\theta_r,\phi_r)\not=f_r(\theta_i,\phi_i-a;\theta_r,\phi_r-a)$。</p>
+<p><strong>Isotropic</strong> 在BRDF上就只与出入射角的相对差有关。函数可以写成$f_R(\theta_i,\theta_R,\phi_r-\phi_i)$。</p>
+<p><strong>Brushed Metal</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material15.png" alt="17_Material15"></p>
+<p>VRay是一个较好的商业软件，但不是最好的</p>
+<p><strong>Nylon</strong> 接近各向同性：横竖上同性，对角线上异性</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material16.png" alt="17_Material16"></p>
+<p><strong>Velvet</strong> 天鹅绒，在表面周围有fiber伸出，可以被人为改变fiber的朝向，相当于人为改变微表面，所以被认为各向异性。</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material17.png" alt="17_Material17"></p>
+<p><strong>Properties of BRDFs</strong></p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material18.png" alt="17_Material18"></p>
+<p>BRDF可以线性拆分\组合，diffuse、specular、ambient加在一起和整个BRDF做光线传播得到的结果一模一样。</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material19.png" alt="17_Material19"></p>
+<p>能量守恒，BRDF算出来的能量不能变多。</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material20.png" alt="17_Material20"></p>
+<p><strong>Measuring BRDFs</strong></p>
+<p>只有测出的BRDF才是对的，物理模型只是模拟</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material21.png" alt="17_Material21"><img src="E:\project_hexo\test\source\_data\17_Material22.png" alt="17_Material22"><img src="E:\project_hexo\test\source\_data\17_Material23.png" alt="17_Material23"></p>
+<p>一个爪子光源，一个爪子相机，精确到0.1度，围绕圆心转</p>
+<p><img src="E:\project_hexo\test\source\_data\17_Material24.png" alt="17_Material24"><img src="E:\project_hexo\test\source\_data\17_Material25.png" alt="17_Material25"><img src="E:\project_hexo\test\source\_data\17_Material26.png" alt="17_Material26"><img src="E:\project_hexo\test\source\_data\17_Material27.png" alt="17_Material27"></p>
+<p>一个很有名的BRDF库，每个材质测量了90x90x180次</p>
+<h2 id="Lecture-18-Advanced-Topics-in-Rendering"><a href="#Lecture-18-Advanced-Topics-in-Rendering" class="headerlink" title="Lecture 18 Advanced Topics in Rendering"></a>Lecture 18 Advanced Topics in Rendering</h2><p><strong>Advanced Light Transport</strong></p>
+<ul>
+<li><p>Unbiased light transport methods</p>
+<ul>
+<li><p>Bidirectional path tracing (BDPT)</p>
+<ul>
+<li>Traces sub-paths from both the camera and the light</li>
+<li>Connects the end points from both sub-paths</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\18_BDPT.png" alt="18_BDPT"></p>
+<ul>
+<li>Difficult to implement &amp; quite slow 能做对开发渲染器没问题</li>
+<li>Suitable if the light transport is complex on the light’s side, 从摄像机出发第一个点是漫反射时，光源侧的光比较集中时</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\18_BDPT2.png" alt="18_BDPT2"></p>
+</li>
+<li><p>Metropolis light transport (MLT) *Metropolis 是人名</p>
+<ul>
+<li><p>A Markov Chain Monte Carlo (MCMC) application 生成样本</p>
+<p>Jumping from the current sample to the next with any PDF(probability density function)</p>
+<p>Very good at locally exploring difficult light paths</p>
+<p>key idea : Locally perturb an existing path to get a new path 在一条路径周围加一个扰动就得到一个新路径，以此类推能得到很多新路径</p>
+<p><img src="E:\project_hexo\test\source\_data\18_MLT.png" alt="18_MLT"></p>
+</li>
+<li><p>Works great with difficult light paths 根据一个路径去生成新的会比一个个跟踪快很多，比如左图门半开着，一部分光聚集在右边。右图的cau</p>
+</li>
+<li><p>stics，水面specular，水底diffuse，水面又specular，简称SDS。SDS只有少部分路径能够打到光线，如果根据一个新路径来生成就会快很多。</p>
+</li>
+<li><p>Also unbiased</p>
+<p><img src="E:\project_hexo\test\source\_data\18_MLT2.png" alt="18_MLT2"></p>
+<ul>
+<li>坏处是</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\18_MLT3.png" alt="18_MLT3"></p>
+<p>更不能用来渲染动画，上下两帧有些点收敛速度不同，看起来会抖得很厉害。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Biased light transport methods</p>
+<ul>
+<li><p>Photon mapping 特别适合渲染caustics和SDS</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Photon_Mapping.png" alt="18_Photon_Mapping"></p>
+<p>分成两步，有很多实现方法。其中之一是</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Photon_Mapping2.png" alt="18_Photon_Mapping2"></p>
+<p><img src="E:\project_hexo\test\source\_data\18_Photon_Mapping3.png" alt="18_Photon_Mapping3"></p>
+<p><img src="E:\project_hexo\test\source\_data\18_Photon_Mapping4.png" alt="18_Photon_Mapping4"></p>
+<p>In rendering:</p>
+<p>Biased = Blurry</p>
+<p>Consistent = Not blurry with infinite samples</p>
+<p>如果人为选定一个面积去估计密度，那么即有偏也不一致，因为样本再多永远也无法取得极小面积。</p>
+</li>
+<li><p>Vertex connection and merging (VCM) 把双向路径追踪和光子映射结合起来，虽然实现很困难。很多电影是用这个方法来做渲染的。</p>
+<p><img src="E:\project_hexo\test\source\_data\18_VCM.png" alt="18_VCM"></p>
+</li>
+</ul>
+</li>
+<li><p>Instant radiosity (VPL/many light methods)</p>
+</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\18_IR.png" alt="18_IR"><img src="E:\project_hexo\test\source\_data\18_IR2.png" alt="18_IR2"></p>
+<p>很多动画电影的工业上还在用path tracing，虽然不高端，但是最可靠。</p>
+<ul>
+<li><p>Advanced Appearance Modeling</p>
+<ul>
+<li><p>Non-surface models</p>
+<ul>
+<li><p>Participating media : like Fog 、Cloud等 不是定义在表面上而是空间中的</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Participating.png" alt="18_Participating"></p>
+<p><img src="E:\project_hexo\test\source\_data\18_Participating2.png" alt="18_Participating2"></p>
+<p>Phase Function类似BRDF，只不过是用来决定光线如何散射的</p>
+<p>渲染方程只告诉我们光线如何与表面相作用，光线与体积作用有其他公式，但思想还是生成path</p>
+</li>
+<li><p>Hair / fir / fiber (BCSDF) 将头发视为圆柱模型，一根光线会反射出一个圆锥，同时还向四面八方散射</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Hair.png" alt="18_Hair"></p>
+<p>Kajiya-Kay模型看起来不真实，很像bling-phong模型</p>
+<p>广泛应用的模型Marshner Model将头发视为玻璃圆柱，考虑了光线穿进头发发生折射，一次折射是T，一次反射是R，TRT就是穿过后在另一壁反射回来穿出去</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Hair2.png" alt="18_Hair2"></p>
+<p>外层表皮叫cuticle，里面有色素叫cortex，会吸收光线，黑头发就是色素多，金发就色素少。</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Hair3.png" alt="18_Hair3"></p>
+<p>但是一根头发还能散射到其他n根头发上，所以计算非常难</p>
+<p>人类头发的模型用在动物身上看起来会很奇怪，因为生物</p>
+<p><img src="E:\project_hexo\test\source\_data\18_Hair4.png" alt="18_Hair4"></p>
+</li>
+<li><p>Granular material</p>
+</li>
+</ul>
+</li>
+<li><p>Surface models</p>
+<ul>
+<li>Translucent material (BSSRDF)</li>
+<li>Cloth </li>
+<li>Detailed material (non-statistical BRDF)</li>
+</ul>
+</li>
+<li><p>Procedual appearance</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lecture-21-Animation-simulation"><a href="#Lecture-21-Animation-simulation" class="headerlink" title="Lecture 21 Animation / simulation"></a>Lecture 21 Animation / simulation</h2><p>Film: 24 frames per second</p>
+<p>Video: 30 fps in general</p>
+<p>Virtual reality: 90 fps 为了头显不晕，必须非常流畅，双眼都要90fps</p>
+<p>最初是用于科学研究而制作的动画，后来人们喜欢看运动的东西，才用作娱乐</p>
+<p>第一部 Hand-Drawn Feature-Length(时长大于40mins，完整长度)的动画是Snow White and the Seven Dwarfs(1937)</p>
+<p>第一部 CG(computer generated) Feature-Length(完整长度) Film是Toy Stroy玩具总动员(1995), 还是用的光栅化方法</p>
+<h3 id="Keyframe-Animation"><a href="#Keyframe-Animation" class="headerlink" title="Keyframe Animation"></a>Keyframe Animation</h3><p>最简单的动画，和几何插值十分有关联</p>
+<p>可以看作物体上每个点插值应该在的位置</p>
+<h2 id="Physical-Simulation"><a href="#Physical-Simulation" class="headerlink" title="Physical Simulation"></a>Physical Simulation</h2><p>只要把每个点受力分析对，就不会出现反物理现象或穿模</p>
+<script type="math/tex; mode=display">
+F = ma \\
+Force = Mass \ Acceleration</script><h3 id="最简单的质点弹簧系统-Mass-Spring-Rope"><a href="#最简单的质点弹簧系统-Mass-Spring-Rope" class="headerlink" title="最简单的质点弹簧系统 Mass Spring Rope"></a>最简单的质点弹簧系统 Mass Spring Rope</h3><script type="math/tex; mode=display">
+f_{a\rightarrow b} = k_S \frac{b-a}{||b-a||}(||b-a||-l)</script><p>$b-a$是向量，$\frac{b-a}{||b-a||}$是归一化取方向. $\dot{b}$就是速度velocity，$\ddot{b}$就是加速度acceleration.</p>
+<p>为了不让弹簧永远震动，加一个摩擦力来把a，b往运动方向往回拉。</p>
+<p><img src="E:\project_hexo\test\source\_data\21_mass_spring.png" alt="21_mass_spring"></p>
+<p>但是这个摩檫力无法表示弹簧内部的损耗，而是单纯的把弹簧的两端质点都减慢运动。如果弹簧整体上都在运动，那么它整体上都会被减缓。摩檫力还应该做的事是让弹簧恢复原状，所以只表示内部消耗的运动应该是：</p>
+<script type="math/tex; mode=display">
+对b的摩檫力：f_b = -k_d \frac{b-a}{||b-a||}·\frac{b-a}{||b-a||}(\dot{b}-\dot{a})</script><p>$(\dot{b}-\dot{a})$是b对a的相对速度，$\frac{b-a}{||b-a||}(\dot{b}-\dot{a})$是向量点乘单位向量得到标量，相当于将相对速度投影到a-b直线上。因为当b绕着a做匀速圆周运动时，相对速度始终垂直于a-b连线，不应该会受摩檫力影响使弹簧恢复长度。所以只有a-b直线上的分量会影响。</p>
+<h3 id="用弹簧质点系统模拟布料"><a href="#用弹簧质点系统模拟布料" class="headerlink" title="用弹簧质点系统模拟布料"></a>用弹簧质点系统模拟布料</h3><p><img src="E:\project_hexo\test\source\_data\21_mass_spring2.png" alt="21_mass_spring2"></p>
+<p>为了抵抗切变，需要对角线的抵抗力，同时也能抵抗对角的非平面弯曲。</p>
+<p><img src="E:\project_hexo\test\source\_data\21_mass_spring3.png" alt="21_mass_spring3"></p>
+<p>但是沿着竖直和水平的连接线的非平面弯曲还无法抵抗，可以添加一点跳跃的弱连接。</p>
+<p><img src="E:\project_hexo\test\source\_data\21_mass_spring4.png" alt="21_mass_spring4"></p>
+<p>红色的跳跃连接只提供比较弱的抵抗力，只提供辅助作用，不能取代蓝色的，蓝色的比较强。</p>
+<h3 id="Particle-Systems-粒子系统就是定义个体与群体之间的关系"><a href="#Particle-Systems-粒子系统就是定义个体与群体之间的关系" class="headerlink" title="Particle Systems (粒子系统就是定义个体与群体之间的关系)"></a>Particle Systems (粒子系统就是定义个体与群体之间的关系)</h3><p><img src="E:\project_hexo\test\source\_data\21_particle_system.png" alt="21_particle_system"></p>
+<p>定义是简单的，求解是学术界要追求的。</p>
+<p>For each frame in animation:</p>
+<ul>
+<li>If needed, create new particles</li>
+<li>Calculate forces on each particle</li>
+<li>Update each particle’s position and velocity</li>
+<li>If needed, remove dead particles</li>
+<li>Render particles</li>
+</ul>
+<h3 id="Particle-system-forces"><a href="#Particle-system-forces" class="headerlink" title="Particle system forces"></a>Particle system forces</h3><p>Attraction and repulsion forces</p>
+<ul>
+<li>gravity, electromagnetism, …</li>
+<li>Springs, propulsion, …</li>
+</ul>
+<p>Damping forces</p>
+<ul>
+<li>Fricton, air drag, viscosity, …</li>
+</ul>
+<p>Collisions</p>
+<ul>
+<li>Walls, containers, fixed objects, …</li>
+<li>Dynamics objects, character body parts, …</li>
+</ul>
+<h3 id="Gravitational-Attraction"><a href="#Gravitational-Attraction" class="headerlink" title="Gravitational Attraction"></a>Gravitational Attraction</h3><p>Newton’s universal law of gravitation</p>
+<ul>
+<li>Gravitational pull between particles</li>
+</ul>
+<script type="math/tex; mode=display">
+F_g=G\frac{m_1m_2}{d^2} \\
+G=6.67428\times10^{-11}Nm^2kg^{-2}</script><p>Simulated Flocking as an ODE (粒子系统就是定义个体与群体之间的关系)</p>
+<p><img src="E:\project_hexo\test\source\_data\21_particle_system2.png" alt="21_particle_system2"></p>
+<h3 id="Forward-Kinematics-图形学中的正运动学"><a href="#Forward-Kinematics-图形学中的正运动学" class="headerlink" title="Forward Kinematics (图形学中的正运动学)"></a>Forward Kinematics (图形学中的正运动学)</h3><p><img src="E:\project_hexo\test\source\_data\21_forward_kinematics.png" alt="21_forward_kinematics"></p>
+<p><img src="E:\project_hexo\test\source\_data\21_forward_kinematics2.png" alt="21_forward_kinematics2"></p>
+<p>当给出$\theta$随时间变化的方程，就可以知道$p$点随时间画出的运动轨迹。比如人走路双腿的运动轨迹。</p>
+<p><strong>Pros and Cons</strong></p>
+<p>Strengths</p>
+<ul>
+<li>Direct control is convenient</li>
+<li>Implementation is straightforward</li>
+</ul>
+<p>Weaknesses</p>
+<ul>
+<li>Animation may be inconsistent with physics</li>
+<li>Time sonsuming for artists</li>
+</ul>
+<h3 id="Inverse-Kinematics-逆运动学，更难，但美工用起来更简单"><a href="#Inverse-Kinematics-逆运动学，更难，但美工用起来更简单" class="headerlink" title="Inverse Kinematics(逆运动学，更难，但美工用起来更简单)"></a>Inverse Kinematics(逆运动学，更难，但美工用起来更简单)</h3><p>因为人操作起来直接确定点的位置会更直观，而不是确认每个角度的大小，所以通过点的位置求解角度也是可行的。</p>
+<p><img src="E:\project_hexo\test\source\_data\21_inverse_kinematics.png" alt="21_inverse_kinematics"></p>
+<p>这是一个优化问题，直接求解困难，所以通常使用机器学习里的梯度下降法(K个连接点时)</p>
+<ul>
+<li>Choose an initial configuration</li>
+<li>Define an error metric (e.g. square of distance between goal and current position)</li>
+<li>Compute gradient of error as function of configuration</li>
+<li>Apply gradient descent (or Newton’s method, or other optimization procedure) </li>
+</ul>
+<p>难点是</p>
+<ul>
+<li>有时候解不唯一</li>
+<li>有时候解不存在</li>
+</ul>
+<h3 id="Rigging"><a href="#Rigging" class="headerlink" title="Rigging"></a>Rigging</h3><p><img src="E:\project_hexo\test\source\_data\21_rigging.png" alt="21_rigging"></p>
+<p>工业界里的软选取，蒙皮，就是rigging的应用，操作控制点</p>
+<h3 id="Blend-Shapes-UE4中也叫这个"><a href="#Blend-Shapes-UE4中也叫这个" class="headerlink" title="Blend Shapes(UE4中也叫这个)"></a>Blend Shapes(UE4中也叫这个)</h3><p>通过对控制点的插值，可以实现两个变化之间的中间帧，就叫Blend shapes</p>
+<p><img src="E:\project_hexo\test\source\_data\21_rigging2.png" alt="21_rigging2"></p>
+<h3 id="Motion-Capture"><a href="#Motion-Capture" class="headerlink" title="Motion Capture"></a>Motion Capture</h3><p>动作捕捉：给真人添加控制点，然后反应到虚拟人物中去</p>
+<p><img src="E:\project_hexo\test\source\_data\21_motion_capture.png" alt="21_motion_capture"></p>
+<p><img src="E:\project_hexo\test\source\_data\21_motion_capture2.png" alt="21_motion_capture2"></p>
+<p>可能出现人身上的控制点被遮挡的情况</p>
+<p><img src="E:\project_hexo\test\source\_data\21_motion_capture3.png" alt="21_motion_capture3"><img src="E:\project_hexo\test\source\_data\21_motion_capture4.png" alt="21_motion_capture4"><img src="E:\project_hexo\test\source\_data\21_motion_capture5.png" alt="21_motion_capture5"><img src="E:\project_hexo\test\source\_data\21_motion_capture6.png" alt="21_motion_capture6"><img src="E:\project_hexo\test\source\_data\21_motion_capture7.png" alt="21_motion_capture7"><img src="E:\project_hexo\test\source\_data\21_motion_capture8.png" alt="21_motion_capture8"></p>
+<p>VFX是图形学里effects的缩写</p>
+<p>迪士尼有个render farm，就是一堆集群去渲染动画，每分每秒都在烧钱，比真人演员还贵。</p>
+<h3 id="Single-particle-simulation"><a href="#Single-particle-simulation" class="headerlink" title="Single particle simulation"></a>Single particle simulation</h3><p><img src="E:\project_hexo\test\source\_data\22_particle_simulation.png" alt="22_particle_simulation"></p>
+<h3 id="Explicit-Forward-Euler-method-用当前帧的速度加速度，计算下一帧的位移和速度"><a href="#Explicit-Forward-Euler-method-用当前帧的速度加速度，计算下一帧的位移和速度" class="headerlink" title="Explicit(Forward) Euler method (用当前帧的速度加速度，计算下一帧的位移和速度)"></a>Explicit(Forward) Euler method (用当前帧的速度加速度，计算下一帧的位移和速度)</h3><script type="math/tex; mode=display">
+x^{t+\Delta t}=x^t+\Delta t\dot{x}^t \\
+\dot{x}^{t+\Delta t}=\dot{x}^t+\Delta t\ddot{x}^t</script><p>$\dot{x}^t$就是$v(x,t)$，$\ddot{x}^t$就是$a(x,t)$</p>
+<ul>
+<li>Simple iterative method</li>
+<li>Commonly used</li>
+<li>Very inaccurate</li>
+<li>Most often goes unstable</li>
+</ul>
+<p><img src="E:\project_hexo\test\source\_data\22_euler.png" alt="22_euler"></p>
+<p><img src="E:\project_hexo\test\source\_data\22_euler2.png" alt="22_euler2"></p>
+<p><img src="E:\project_hexo\test\source\_data\22_euler3.png" alt="22_euler3"></p>
+<p>误差的积累在信号与系统里叫正反馈。螺旋的运动无论多小的步长，时间久了之后最终都会不可避免地偏离圆周。</p>
+<h3 id="Instability-and-improvements"><a href="#Instability-and-improvements" class="headerlink" title="Instability and improvements"></a>Instability and improvements</h3><p><strong>Midpoint Method / Modified Euler</strong> </p>
+<p><img src="E:\project_hexo\test\source\_data\22_midpoint.png" alt="22_midpoint"></p>
+<p><img src="E:\project_hexo\test\source\_data\22_euler4.png" alt="22_euler4"></p>
+<p><img src="E:\project_hexo\test\source\_data\22_euler5.png" alt="22_euler5"></p>
+<p>从下一段位移找二分之一时间的中点，如果二分之一时间走的位移和一个时间的位移已经相差不大了，就不需要继续二分时间了。</p>
+<h3 id="Implicit-Euler-Method-用下一帧的速度和加速度来算当前帧的位移和速度"><a href="#Implicit-Euler-Method-用下一帧的速度和加速度来算当前帧的位移和速度" class="headerlink" title="Implicit Euler Method(用下一帧的速度和加速度来算当前帧的位移和速度)"></a>Implicit Euler Method(用下一帧的速度和加速度来算当前帧的位移和速度)</h3><p><img src="E:\project_hexo\test\source\_data\22_backward_euler.png" alt="22_backward_euler"></p>
+<p><img src="E:\project_hexo\test\source\_data\22_backward_euler2.png" alt=""></p>
+<p>人们把稳定性和阶数联系起来，如果是二阶的，h减半，误差O就会变成只有八分之一，就很好。</p>
+<p>数值计算里有一类很有名的方法Runge-Kutta，非常擅长解ODEs，特别是非线性的常微分模型。</p>
+<h3 id="Runge-Kutta-Families"><a href="#Runge-Kutta-Families" class="headerlink" title="Runge-Kutta Families"></a>Runge-Kutta Families</h3><p><img src="E:\project_hexo\test\source\_data\22_backward_euler3.png" alt="22_backward_euler3"></p>
+<h3 id="Position-Based-Verlet-Integration-不考虑物理过程，直接调整位置，比如流体"><a href="#Position-Based-Verlet-Integration-不考虑物理过程，直接调整位置，比如流体" class="headerlink" title="Position-Based / Verlet Integration (不考虑物理过程，直接调整位置，比如流体)"></a>Position-Based / Verlet Integration (不考虑物理过程，直接调整位置，比如流体)</h3><p>Idea: </p>
+<ul>
+<li>After modified Euler forward-step, constrain positions of particles to prevent divergent, unstable behavior</li>
+<li>Use constrained positions to calculate velocity</li>
+<li>Both of these ideas will dissipate energy, stabilize</li>
+</ul>
+<p>Pros/Cons</p>
+<ul>
+<li>Fast and simple</li>
+<li>Not physically based, dissipates energy (error) may not obey Conservation of Energy</li>
+</ul>
+<h3 id="Rigid-body-simulation-比点有更多物理量"><a href="#Rigid-body-simulation-比点有更多物理量" class="headerlink" title="Rigid body simulation(比点有更多物理量)"></a>Rigid body simulation(比点有更多物理量)</h3><p><img src="E:\project_hexo\test\source\_data\22_rigid_body.png" alt="22_rigid_body"></p>
+<p>A simple position-based method</p>
+<p>Key idea</p>
+<ul>
+<li>Assuming water is composed of small rigid-body spheres</li>
+<li>Assuming the water cannot be compressed (i.e. const. density)密度不变</li>
+<li>So, as long as the density changes somewhere, it should be “corrected” via changing the positions of particles</li>
+<li>You need to know the gradient of the density anywhere w.r.t. each particle’s position.</li>
+<li>And gradient descent.需要人为设置停止条件</li>
+</ul>
+<h3 id="Eulaerian-vs-Lagrangian-欧拉视角和拉格朗日视角"><a href="#Eulaerian-vs-Lagrangian-欧拉视角和拉格朗日视角" class="headerlink" title="Eulaerian vs. Lagrangian(欧拉视角和拉格朗日视角)"></a>Eulaerian vs. Lagrangian(欧拉视角和拉格朗日视角)</h3><p><img src="E:\project_hexo\test\source\_data\22_eluerian_lagrangian.png" alt="22_eluerian_lagrangian"></p>
+<p>Fluid simulation</p>
 
+                
             </div>
             <hr/>
 
@@ -771,8 +1895,136 @@ T(c)·R(\alpha)·T(-c)</script></li>
                 </div>
             </div>
             
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/Theo-wu.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/Theo-wu.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
 
     
 
@@ -892,16 +2144,9 @@ T(c)·R(\alpha)·T(-c)</script></li>
 <script type="text/javascript" src="/Theo-wu.github.io/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -998,13 +2243,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
 
 
     <footer class="page-footer bg-color">
@@ -1066,7 +2304,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2020</span>
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
             <a href="/Theo-wu.github.io/about" target="_blank">Chenghao Wu</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1094,13 +2335,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/ankus-wu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1498793919@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1108,13 +2349,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="https://twitter.com/ankus96773519" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/ankus96773519" data-position="top" data-delay="50">
-        <i class="fab fa-twitter"></i>
-    </a>
 
 
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1498793919" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1498793919" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1147,10 +2384,95 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/Theo-wu.github.io/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/Theo-wu.github.io/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/Theo-wu.github.io/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -1188,6 +2510,8 @@ $(function () {
 </script>
 
     
+    <script src="/Theo-wu.github.io/libs/others/clicklove.js" async="async"></script>
+    
     
     <script async src="/Theo-wu.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
@@ -1196,6 +2520,7 @@ $(function () {
 
     
 
+	
     
 
     
